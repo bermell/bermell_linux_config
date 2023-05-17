@@ -1,0 +1,5 @@
+return {
+  {
+    "jvirtanen/vim-hcl",
+  },
+}
