@@ -1,5 +1,4 @@
 set -g VIRTUALFISH_VERSION 2.5.5
-set -g VIRTUALFISH_PYTHON_EXEC /usr/bin/python3
-source /root/.local/lib/python3.10/site-packages/virtualfish/virtual.fish
-source /root/.local/lib/python3.10/site-packages/virtualfish/auto_activation.fish
+set -g VIRTUALFISH_PYTHON_EXEC /home/mattias/.pyenv/versions/3.9.16/bin/python
+source /home/mattias/.pyenv/versions/3.9.16/lib/python3.9/site-packages/virtualfish/virtual.fish
 emit virtualfish_did_setup_plugins

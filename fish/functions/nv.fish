@@ -1,3 +1,3 @@
 function nv --wraps=nvim --description 'alias nv nvim'
-  nvim $argv; 
+  $HOME/.config/nvim/nvim.appimage $argv; 
 end

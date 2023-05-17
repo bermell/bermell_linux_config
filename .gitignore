@@ -9,3 +9,5 @@ pypoetry/pyproject.toml
 htop
 pulse
 gedit/accels
+nvim/nvim.appimage
+nvim/lazy-lock.json
