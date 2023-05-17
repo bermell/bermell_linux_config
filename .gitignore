@@ -1,0 +1,11 @@
+github-copilot/hosts.json
+gh/hosts.yml
+lazygit/state.yml
+dconf
+enchant
+pypoetry/auth.toml
+pypoetry/poetry.lock
+pypoetry/pyproject.toml
+htop
+pulse
+gedit/accels
