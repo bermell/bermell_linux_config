@@ -59,6 +59,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fish_add_path ~/.cargo/bin/
 ```
 
+## Config files to link 
+```shell
+ln -s $HOME/.config/gitconfig $HOME/.gitconfig
+ln -s $HOME/.config/tmux.conf $HOME/.tmux.conf
+```
+
 ## tmux yank goes to clipboard too 
 Something with xclip 
 
