@@ -1,7 +1,15 @@
 # Simple installs
 Install some reasonable tools and all dependencies for the more advanced package installers 
 
-`sudo apt install nodejs tmux vim curl git gh make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev`
+First, use snap (ubuntu software) to install gnome-tweaks, open and bind caoslock to be ctrl 
+
+```shell 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb 
+sudo apt install nodejs tmux htop vim curl git gh make fuse build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+```
+Use snap to install slack vscode discord
+
+Installing fuse does something with the kernel so best to restart here
 
 # Custom installs (in order) 
 ## pyenv and python 
@@ -26,10 +34,10 @@ https://github.com/jesseduffield/lazygit#ubuntu
 sudo apt-add-repository ppa:fish-shell/release-3 && sudo apt update && sudo apt install fish
 python -m pip install virtualfish
 ```
-Then you need to do <something clever> to updates paths or something. Then run `vf install` 
+Then you need to do restart computer, then run `vf install` 
 
 ## Neovim 
-`pip install jupyter-client  Pillow cairosvg pnglatex plotly kaleido`
+`pip install jupyter-client Pillow cairosvg pnglatex plotly kaleido`
 
 ```shell
 mkdir ~/.fonts && cd ~/.fonts
@@ -38,25 +46,25 @@ unzip Hack.zip
 rm Hack.zip 
 fc-cache -fv 
 ```
-Pick a [Neovim release, use the .tar.gz](https://github.com/neovim/neovim/releases) 
 
 ```shell
-wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz 
-rm nvim-linux64.tar.gz 
-mv nvim-linux64/bin/nvim ~/.config/nvim/nvim.appimage
+wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+mv nvim.appimage ~/.config/nvim/nvim.appimage
+chmod +x ~/.config/nvim/nvim.appimage
 ```
 
+## Rust 
+```shell 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fish_add_path ~/.cargo/bin/
+```
 
-# Packages to install 
-| Program | comment | dependencies  
-| [rustup]() | |
-| [nvim]() | | `sudo apt install fuse` `pip install jupyter-client  Pillow cairosvg pnglatex plotly kaleido` https://gist.github.com/matthewjberger/7dd7e079f282f8138a9dc3b045ebefa0 to install nerdfonts 
-| [tmux]() | sudo apt install xclip 
+## tmux yank goes to clipboard too 
+Something with xclip 
+
  |
 
 # Install proper keybindings
-  - caps lock -> ctrl 
   - paragraph -> Alt Gr
 
 ## Vim bindings for navigation in non-terminal programs
