@@ -1,0 +1,9 @@
+# lives at $HOME/.gitconfig
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = mattias@modl.ai
+	name = mattias bermell
+[core]
+	excludesfile = /home/mattias/.config/my_git_ignore
