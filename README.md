@@ -67,7 +67,7 @@ ln -s $HOME/.config/tmux.conf $HOME/.tmux.conf
 
 ## tmux yank goes to clipboard too 
 Something with xclip 
-
+https://github.com/tmux-plugins/tmux-yank 
  |
 
 # Install proper keybindings

@@ -13,6 +13,7 @@ return {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.shfmt,
           nls.builtins.formatting.black,
+          nls.builtins.diagnostics.mypy,
 
           -- nls.builtins.diagnostics.flake8,
         },
