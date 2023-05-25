@@ -25,6 +25,17 @@ function fish_prompt --description 'Write out the prompt'
         set status_color (set_color $fish_color_error)
         set prompt_status $status_color "[" $last_status "]" $normal
     end
+    set -l prompt (echo -s -n $python_color '(' (get_pyenv_virtual) ') ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal $prompt_status ' ' )
+    set -l final_prompt (echo -s -n $status_color $suffix ' ' $normal)
 
-    echo -s -n $python_color '(' (get_pyenv_virtual) ') ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal $prompt_status ' ' $status_color $suffix ' ' $normal
+    echo -e -n $prompt
+
+    # test if the length of prompt is longer than the terminal width
+    set -l prompt_length (string length $prompt)
+    set -l terminal_width (command tput cols)
+    if test $prompt_length -gt (math $terminal_width - 40)
+        echo -e -n "\n"
+    end
+
+    echo -e -n $final_prompt
 end
