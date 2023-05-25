@@ -7,7 +7,12 @@ First, use snap (ubuntu software) to install gnome-tweaks, open and bind caosloc
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb 
 sudo apt install nodejs tmux htop vim curl git gh make fuse build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
-Use snap to install slack vscode discord
+## Snap installs
+```shell
+sudo snap install slack vscode discord gathertown
+snap connect gathertown:audio-record
+snap connect gathertown:camera
+```
 
 Installing fuse does something with the kernel so best to restart here
 
@@ -58,6 +63,9 @@ chmod +x ~/.config/nvim/nvim.appimage
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fish_add_path ~/.cargo/bin/
 ```
+## Docker 
+[https://docs.docker.com/desktop/install/ubuntu/](https://docs.docker.com/desktop/install/ubuntu/) 
+install the docker desktop first, on linux that is very different from the docker engine that runs on the host natively...
 
 ## Config files to link 
 ```shell
