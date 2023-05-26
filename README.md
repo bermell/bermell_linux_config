@@ -78,8 +78,8 @@ Something with xclip
 https://github.com/tmux-plugins/tmux-yank 
  |
 
-# Install proper keybindings
-  - paragraph -> Alt Gr
+## Install proper keybindings
+Open a GUI program called `Startup Applications Prefencenes` and make it run `/usr/bin/xmodmap /home/mattias/.config/Xmodmap` on startup if it's not already there. 
 
 ## Vim bindings for navigation in non-terminal programs
 Want to bind:
