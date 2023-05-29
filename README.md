@@ -80,13 +80,9 @@ https://github.com/tmux-plugins/tmux-yank
 
 ## Install proper keybindings
 Open a GUI program called `Startup Applications Prefencenes` and make it run `/usr/bin/xmodmap /home/mattias/.config/Xmodmap` on startup if it's not already there. 
+`xcape -e 'ISO_Level3_Shift=Escape`
 
-## Vim bindings for navigation in non-terminal programs
-Want to bind:
- - <modifier>h -> left  
- - <modifier>j -> down
- - <modifier>k -> up
- - <modifier>l -> right
+## TODO bindings 
  - <modifier>b -> ctrl+left
  - <modifier>e -> ctrl+right
 
