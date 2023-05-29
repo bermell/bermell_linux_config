@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=gnome-terminal
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Gnome Terminal
+Name=Gnome Terminal
+Comment[en_US]=start hazzoring! 
+Comment=start hazzoring! 
