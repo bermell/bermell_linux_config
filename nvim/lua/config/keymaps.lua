@@ -30,6 +30,7 @@ vim.api.nvim_set_keymap("i", "<M-d>", "<Plug>(copilot-dismiss)", { silent = true
 -- vim.api.nvim_set_keymap("i", "<C-f>", "<Plug>(copilot-accept)", { silent = true, noremap = false })
 map("i", "<M-f>", 'copilot#Accept("")', { expr = true, silent = true })
 map("n", "<leader>cp", ":Copilot panel<CR>", { silent = true })
+map("n", "<leader>D", ":DockerToolsToggle<CR>", { silent = true })
 -- vim.api.nvim_set_keymap("i", "<C-f>", "v:lua.copilot_accept()", { expr = true, silent = true })
 -- vim.g.copilot_no_tab_map = true
 

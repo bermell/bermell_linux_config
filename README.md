@@ -67,16 +67,13 @@ fish_add_path ~/.cargo/bin/
 [https://docs.docker.com/desktop/install/ubuntu/](https://docs.docker.com/desktop/install/ubuntu/) 
 install the docker desktop first, on linux that is very different from the docker engine that runs on the host natively...
 
+[https://github.com/jesseduffield/lazydocker#binary-release-linuxosxwindows](https://github.com/jesseduffield/lazydocker#binary-release-linuxosxwindow) like lazygit for docker. Awesome!
+
 ## Config files to link 
 ```shell
 ln -s $HOME/.config/gitconfig $HOME/.gitconfig
 ln -s $HOME/.config/tmux.conf $HOME/.tmux.conf
 ```
-
-## tmux yank goes to clipboard too 
-Something with xclip 
-https://github.com/tmux-plugins/tmux-yank 
- |
 
 ## Install proper keybindings
 Open a GUI program called `Startup Applications Prefencenes` and make it run `/usr/bin/xmodmap /home/mattias/.config/Xmodmap` on startup if it's not already there. 
