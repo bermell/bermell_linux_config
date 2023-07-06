@@ -1,0 +1,11 @@
+[Unit]
+Description=KMonad Keyboard Manager
+
+[Service]
+ExecStart=/home/mattias/.local/bin/kmonad /home/mattias/.config/kmonad/config.kbd
+Restart=on-failure
+User=mattias
+Group=uinput
+
+[Install]
+WantedBy=multi-user.target

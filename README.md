@@ -75,9 +75,34 @@ ln -s $HOME/.config/gitconfig $HOME/.gitconfig
 ln -s $HOME/.config/tmux.conf $HOME/.tmux.conf
 ```
 
-## Install proper keybindings
-Open a GUI program called `Startup Applications Prefencenes` and make it run `/usr/bin/xmodmap /home/mattias/.config/Xmodmap` on startup if it's not already there. 
-`xcape -e 'ISO_Level3_Shift=Escape`
+# Personalization 
+
+## Kmonad - keyboard layout! 
+Download the binary from [kmonad github](https://github.com/kmonad/kmonad/releases). Make it executable and put it in `/home/mattias/.local/bin/kmonad`
+We want to run kmonad as a user with the minimal privilages needed [see more](https://dev.to/ram535/kmonad-and-the-power-of-infinite-leader-keys-888). 
+
+```shell
+sudo usermod -aG input $USER
+sudo groupadd uinput
+sudo usermod -aG uinput $USER
+
+echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/90-uinput.rules
+
+echo uinput | sudo tee /etc/modules-load.d/uinput.conf
+```
+
+Now add it as a service to ubuntu:
+
+```shell
+sudo ln -s /home/mattias/.config/kmonad/kmonad.service /etc/systemd/system/kmonad.service
+sudo systemctl daemon-reload  # this will register the new service to the deamon
+sudo systemctl enable kmonad.service # enable on boot
+sudo systemctl start kmonad.service # start now
+sudo systemctl status kmonad.service 
+journalctl -u kmonad.service # to check the logs
+```
+To restart it after a config update run `sudo systemctl restart kmonad.service`
+
 
 ## TODO bindings 
  - <modifier>b -> ctrl+left
