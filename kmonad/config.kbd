@@ -28,11 +28,17 @@
   cF (tap-hold-next-release 300 f lctl)
   sD (tap-hold-next-release 300 d lsft)
   aS (tap-hold-next-release 300 s lalt)
-  gA (tap-hold-next-release 300 a lmet) ;; gui is the windows key
+  gA (tap-hold-next-release 300 a lmet)
   cJ (tap-hold-next-release 300 j lctl)
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
-  g; (tap-hold-next-release 300 ; lmet)
+  g; (tap-hold-next-release 300 ; (layer-toggle window_management))
+  
+  W1 (around lmet 1)
+  W2 (around lmet 2)
+  W3 (around lmet 3)
+  ;; 
+
 )
 
 (deflayer base
@@ -54,3 +60,11 @@
   _       _     _         _         _    _    _                    _       _     _
   )
 
+(deflayer window_management
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     @W1  @W2  @W3  _    _    _    _    _    _    _     _                        _
+  _       _     _    _    _    _    _    _    _    _    _    _             _                _
+  _       _     _         _         _    _    _                    _       _     _
+  )
