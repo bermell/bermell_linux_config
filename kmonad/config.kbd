@@ -28,20 +28,20 @@
   cF (tap-hold-next-release 300 f lctl)
   sD (tap-hold-next-release 300 d lsft)
   aS (tap-hold-next-release 300 s lalt)
-  ;; gA (tap-hold-next-release 300 a lgui) ;; gui is the windows key
+  gA (tap-hold-next-release 300 a lmet) ;; gui is the windows key
   cJ (tap-hold-next-release 300 j lctl)
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
-  ;; g: (tap-hold-next-release 300 : lgui)
+  g; (tap-hold-next-release 300 ; lmet)
 )
 
 (deflayer base
   esc    f1    f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
   `      1     2    3    4    5    6    7    8    9    0    /     =      bspc              home
   tab    q     w    e    r    t    y    u    i    o    p    [     ]      ret               pgup
-  @cesc  a     @aS  @sD  @cF  g    h    @cJ  @sK  @aL  ;    '     \                        pgdn
+  @cesc  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;    '     \                        pgdn
   lsft   z     x    c    v    b    n    m    ,    .    -    rsft         up                end
-  ret   lmet  @sym      spc       ralt cmps rctl                 left   down   rght
+  ret   lmet  bspc      spc       ret   cmps rctl                 left   down   rght
   )
 
 
