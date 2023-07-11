@@ -34,6 +34,7 @@
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
   g; (tap-hold-next-release 300 ; (layer-toggle window_management))
+  fun (layer-toggle function)
   
   W1 (around lmet 1)
   W2 (around lmet 2)
@@ -47,7 +48,7 @@
   `      _     _    _    _    _    _    _    _    _    _    /     =      _            home
   @tnum  q     w    e    r    t    y    u    i    o    p    [     ]      _            pgup
   @symE  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;  '     \                   pgdn
-  _      z     x    c    v    b    n    m    ,    .    -    _         up                end
+  @fun   z     x    c    v    b    n    m    ,    .    -    _         up                end
   _      lmet  bspc      spc       ret   cmps rctl                 left   down   rght
   )
 
