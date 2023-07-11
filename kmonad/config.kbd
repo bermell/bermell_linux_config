@@ -24,8 +24,8 @@
 
 (defalias
   sym (layer-toggle symbols)
-  tnum (tap-hold-next-release 300 tab (layer-toggle symbols))
-  cesc (tap-hold-next-release 300 esc lctl)
+  tnum (tap-hold-next-release 300 tab (layer-toggle numbers))
+  symE (tap-hold-next-release 300 esc (layer-toggle symbols))
   cF (tap-hold-next-release 300 f lctl)
   sD (tap-hold-next-release 300 d lsft)
   aS (tap-hold-next-release 300 s lalt)
@@ -38,34 +38,43 @@
   W1 (around lmet 1)
   W2 (around lmet 2)
   W3 (around lmet 3)
-  ;; 
 
+  
 )
 
 (deflayer base
   esc    f1    f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
   `      1     2    3    4    5    6    7    8    9    0    /     =      bspc              home
   @tnum  q     w    e    r    t    y    u    i    o    p    [     ]      ret               pgup
-  @cesc  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;    '     \                        pgdn
+  @symE  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;    '     \                        pgdn
   lsft   z     x    c    v    b    n    m    ,    .    -    rsft         up                end
   ret   lmet  bspc      spc       ret   cmps rctl                 left   down   rght
   )
 
 
 (deflayer symbols
-  _       _    _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _       _    _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       [    ]    _    _    _    _    7    8    9    _    _     _       _                _
-  _       _    _    _    _    _    _    4    5    6    _    _     _                        _
-  _       _    _    _    _    _    _    1    2    3    _    _             _                _
-  _       _    _         0         _    _    _                    _       _     _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      !     @    #    $    %    &    {    \(   \)   }    [     ]       _                _
+  _      _     _    _    _    _    left down up   rght _    _     _                        _
+  _      _     _    _    _    _    _    /    \\   _    _    _             _                _
+  _      _     _         _         _    _    _                    _       _     _
+  )
+
+(deflayer numbers
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      [     ]    _    _    _    _    7    8    9    _    _     _       _                _
+  _      _     _    _    _    _    _    4    5    6    _    _     _                        _
+  _      _     _    _    _    _    _    1    2    3    _    _             _                _
+  _      _     _         0         _    _    _                    _       _     _
   )
 
 (deflayer window_management
-  _       _    _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _       _    _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _    _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _    _    _    _    _    _    _    _    _    _    _     _                        _
-  _       _    _    _    _    _    _    @W1  @W2  @W3  _    _             _                _
-  _       _    _         _         _    _    _                    _       _     _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      _     _    _    _    _    _    _    _    _    _    _     _                        _
+  _      _     _    _    _    _    _    @W1  @W2  @W3  _    _             _                _
+  _      _     _         _         _    _    _                    _       _     _
   )
