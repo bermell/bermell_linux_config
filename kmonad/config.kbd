@@ -40,6 +40,12 @@
   sE (tap-hold-next-release 300 e (layer-toggle symbols))
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
   sI (tap-hold-next-release 300 i (layer-toggle symbols))
+  ccC (tap-hold 500 c (around lctl c))
+  ccV (tap-hold 500 v (around lctl v))
+  ccX (tap-hold 500 x (around lctl x))
+  ccZ (tap-hold 500 z (around lctl z))
+
+
   fun (layer-toggle function)
   
   W1 (around lmet 1)
@@ -62,7 +68,7 @@
   `      _     _    _    _    _    _    _    _    _    _    /     =      _            home
   @tnum  q     @nW  @sE  r    t    y    u    @sI  @nO  p    [     ]      _            pgup
   @symE  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;  '     \                   pgdn
-  @fun   z     x    c    v    b    n    m    ,    .    -    _         up                end
+  @fun   @ccZ  @ccX @ccC @ccV b    n    m    ,    .    -    _         up                end
   _      lmet  bspc      spc       ret   cmps rctl                 left   down   rght
   )
 
@@ -71,8 +77,8 @@
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      !     @    #    $    %    &    {    \(   \)   }    [     ]       _                _
-  _      lmet  lalt lsft lctl _    left down up   rght _    _     _                        _
-  _      _     *    +    =   _    _    /    \\   ?    |    _             _                _
+  _      lmet  lalt lsft lctl ^    left down up   rght _    `     _                        _
+  _      _     *    +    =    ~    _    /    \\   ?    |    _             _                _
   _      _     _         _         _    _    _                    _       _     _
   )
 
