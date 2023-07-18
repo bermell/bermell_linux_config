@@ -31,11 +31,12 @@
   cF (tap-hold-next-release 300 f lctl)
   sD (tap-hold-next-release 300 d lsft)
   aS (tap-hold-next-release 300 s lalt)
-  gA (tap-hold-next-release 300 a (layer-toggle window_management))
+  gA (tap-hold-next-release 300 a lmet)
   cJ (tap-hold-next-release 300 j lctl)
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
-  g; (tap-hold-next-release 300 ; (layer-toggle window_management))
+  g; (tap-hold-next-release 300 ; lmet)
+  ;; bonus layer toggles
   nW (tap-hold-next-release 300 w (layer-toggle numbers))
   sE (tap-hold-next-release 300 e (layer-toggle symbols))
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
@@ -45,6 +46,9 @@
   ccX (tap-hold 500 x (around lctl x))
   ccZ (tap-hold 500 z (around lctl z))
 
+  ;; navigation
+  bw (around lctl left)
+  fw (around lctl rght)
 
   fun (layer-toggle function)
   
@@ -77,8 +81,8 @@
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      !     @    #    $    %    &    {    \(   \)   }    [     ]       _                _
-  _      lmet  lalt lsft lctl ^    left down up   rght _    `     _                        _
-  _      _     *    +    =    ~    _    /    \\   ?    |    _             _                _
+  _      =     +    *    ^    _    ~    /    \\   ?    |    `     _                        _
+  _      _     _    _    _    _    _    _    _    _    _    _             _                _
   _      _     _         _         _    _    _                    _       _     _
   )
 
@@ -94,17 +98,9 @@
 (deflayer function
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      _     _    _    _    _    _    f7   f8   f9   f10  _     _       _                _
-  _      _     _    _    _    _    _    f4   f5   f6   f11  _     _                        _
-  _      _     _    _    _    _    _    f1   f2   f3   f12  _             _                _
+  _      _     _    @fw  _    _    _    pgup _    _    _    _     _       _                _
+  _      _     _    pgdn _    _    left down up   rght _    _     _                        _
+  _      _     _    _    _    @bw  _    _    _    _    _    _             _                _
   _      _     _         _         _    _    _                    _       _     _
   )
 
-(deflayer window_management
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      _     _    _    _    _    _    @W5  @W6  @W7  @W8  _     _       _                _
-  _      _     _    _    _    _    @w_l @w_d @w_u @w_r _    _     _                        _
-  _      _     _    _    _    _    _    @W1  @W2  @W3  @W4  _             _                _
-  _      _     _         _         _    _    _                    _       _     _
-  )
