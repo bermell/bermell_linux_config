@@ -50,7 +50,7 @@
   bw (around lctl left)
   fw (around lctl rght)
 
-  fun (layer-toggle function)
+  fun (tap-hold-next-release 300 (around lctl spc) (layer-toggle function) )
   
   W1 (around lmet 1)
   W2 (around lmet 2)
@@ -72,8 +72,8 @@
   `      _     _    _    _    _    _    _    _    _    _    /     =      _            home
   @tnum  q     @nW  @sE  r    t    y    u    @sI  @nO  p    [     ]      _            pgup
   @symE  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;  '     \                   pgdn
-  @fun   @ccZ  @ccX @ccC @ccV b    n    m    ,    .    -    _         up                end
-  _      lmet  bspc      spc       ret   cmps rctl                 left   down   rght
+  @fun   @ccZ  @ccX @ccC @ccV b    n    m    ,    .    -    @fun          up                end
+  ret    lmet  bspc      spc       ret   cmps rctl                 left   down   rght
   )
 
 
@@ -81,9 +81,9 @@
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      !     @    #    $    %    &    {    \(   \)   }    [     ]       _                _
-  _      =     +    *    ^    _    ~    /    \\   ?    |    `     _                        _
-  _      _     _    _    _    _    _    _    _    _    _    _             _                _
-  _      _     _         _         _    _    _                    _       _     _
+  caps   =     +    *    ^    _    ~    /    \\   ?    |    `     _                        _
+  _      _     _    _    _    _    _    _    [    ]    _    _             _                _
+  _      _     del       _         _    _    _                    _       _     _
   )
 
 (deflayer numbers
@@ -101,6 +101,6 @@
   _      _     _    @fw  _    _    _    pgup _    _    _    _     _       _                _
   _      _     _    pgdn _    _    left down up   rght _    _     _                        _
   _      _     _    _    _    @bw  _    _    _    _    _    _             _                _
-  _      _     _         _         _    _    _                    _       _     _
+  _      _     _         prnt      _    _    _                    _       _     _
   )
 
