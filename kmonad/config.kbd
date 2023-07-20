@@ -98,9 +98,9 @@
 (deflayer function
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      _     _    @fw  _    _    _    pgup _    _    _    _     _       _                _
+  _      _     _    @fw  _    _    _    pgup _    _    up   _     _       _                _
   _      _     _    pgdn _    _    left down up   rght _    _     _                        _
-  _      _     _    _    _    @bw  _    _    _    _    _    _             _                _
+  _      _     _    _    _    @bw  down _    _    _    _    _             _                _
   _      _     _         prnt      _    _    _                    _       _     _
   )
 
