@@ -7,6 +7,11 @@ First, use snap (ubuntu software) to install gnome-tweaks, open and bind caosloc
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb 
 sudo apt install nodejs tmux htop vim curl git gh make fuse build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 ```
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ## Snap installs
 ```shell
 sudo snap install slack vscode discord gathertown
