@@ -35,16 +35,19 @@
   cJ (tap-hold-next-release 300 j lctl)
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
-  g; (tap-hold-next-release 300 ; lmet)
+  g' (tap-hold-next-release 300 ' lmet)
   ;; bonus layer toggles
   nW (tap-hold-next-release 300 w (layer-toggle numbers))
   sE (tap-hold-next-release 300 e (layer-toggle symbols))
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
   sI (tap-hold-next-release 300 i (layer-toggle symbols))
+  spcsym (tap-hold-next-release 300 spc (layer-toggle symbols))
+  s2G (tap-hold-next-release 300 g (layer-toggle symbols2))
   ccC (tap-hold 500 c (around lctl c))
   ccV (tap-hold 500 v (around lctl v))
   ccX (tap-hold 500 x (around lctl x))
   ccZ (tap-hold 500 z (around lctl z))
+  bfun (tap-hold-next-release 300 bspc (layer-toggle function))
 
   ;; navigation
   bw (around lctl left)
@@ -70,21 +73,30 @@
 (deflayer base
   esc    f1    f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
   `      _     _    _    _    _    _    _    _    _    _    /     =      _            home
-  @tnum  q     @nW  @sE  r    t    y    u    @sI  @nO  p    [     ]      _            pgup
-  @symE  @gA   @aS  @sD  @cF  g    h    @cJ  @sK  @aL  @g;  '     \                   pgdn
+  @tnum  q     @nW  e    r    t    y    u    i    o    p    [     ]      _            pgup
+  @symE  @gA   @aS  @sD  @cF  @s2G h    @cJ  @sK  @aL  @g'  '     \                   pgdn
   @fun   @ccZ  @ccX @ccC @ccV b    n    m    ,    .    -    @fun          up                end
-  ret    lmet  bspc      spc       ret   cmps rctl                 left   down   rght
+  ret    lmet  @bfun     @spcsym   ret   cmps rctl                 left   down   rght
   )
 
 
 (deflayer symbols
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      !     @    #    $    %    &    {    \(   \)   }    [     ]       _                _
-  caps   =     +    *    ^    _    ~    /    \\   ?    |    `     _                        _
-  _      _     _    _    _    _    _    _    [    ]    _    _             _                _
+  _      !     @    #    $    %    &    {    \(   \)   }    _     _       _                _
+  caps   =     +    *    ^    _    ~    /    \\   ?    `    _     _                        _
+  _      _     _    _    _    _    _    \_   _    _    _    _             _                _
   _      _     del       _         _    _    _                    _       _     _
   )
+
+(deflayer symbols2
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    <    [    ]    >    _     _       _                _
+  _       _     _    _    _    _    _    |    ;    :    _    _     _                        _
+  _       _     _    _    _    _    _    _    _    _    _    _             _                _
+  _       _     _         _         _    _    _                    _       _     _
+)
 
 (deflayer numbers
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
