@@ -17,8 +17,10 @@ function fresh_venv --description 'Create a new python virtual environment with 
             pyenv deactivate
             pyenv virtualenv-delete -f $local_dir
         else
-            echo "Virtual environment $local_dir already exists, exiting!"
-            return 1
+            echo "Virtual environment $local_dir already exists, activating it!"
+            pyenv deactivate
+            pyenv activate $local_dir
+            return 0
         end
     end
     echo "Creating virtual environment $local_dir"
