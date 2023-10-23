@@ -37,6 +37,7 @@ pyenv global 3.9
 ```
 
 ## lazygit 
+Install instructions are in the link below. Doesn't work perfectly to execute in fiss though... 
 https://github.com/jesseduffield/lazygit#ubuntu 
 
 ## fish 
