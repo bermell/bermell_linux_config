@@ -14,7 +14,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Snap installs
 ```shell
-sudo snap install slack vscode discord gathertown
+sudo snap install slack vscode discord gathertown diff-so-fancy
 snap connect gathertown:audio-record
 snap connect gathertown:camera
 ```
