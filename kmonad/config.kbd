@@ -42,7 +42,7 @@
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
   sI (tap-hold-next-release 300 i (layer-toggle symbols))
   spcsym (tap-hold-next-release 300 spc (layer-toggle symbols))
-  s2G (tap-hold-next-release 300 g (layer-toggle symbols2))
+  s2G (tap-hold-next-release 300 g (layer-toggle tmux))
   ccC (tap-hold 500 c (around lctl c))
   ccV (tap-hold 500 v (around lctl v))
   ccX (tap-hold 500 x (around lctl x))
@@ -84,16 +84,16 @@
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      !     @    #    $    %    &    {    \(   \)   }    _     _       _                _
-  caps   =     +    *    ^    _    ~    /    :    ?    `    _     _                        _
-  _      _     _    _    _    _    ;    \_   [    ]    \\   _             _                _
+  caps   =     +    *    ^    |    ~    /    :    ?    `    _     _                        _
+  _      _     _    <    >    _    ;    \_   [    ]    \\   _             _                _
   _      _     del       _         _    _    _                    _       _     _
   )
 
-(deflayer symbols2
+(deflayer tmux
   _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    <    [    ]    >    _     _       _                _
-  _       _     _    _    _    _    _    |    ;    :    _    _     _                        _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    _    _    _    _    _     _                        _
   _       _     _    _    _    _    _    _    _    _    _    _             _                _
   _       _     _         _         _    _    _                    _       _     _
 )
