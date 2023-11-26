@@ -27,7 +27,9 @@
 (defalias
   sym (layer-toggle symbols)
   tnum (tap-hold-next-release 300 tab (layer-toggle numbers))
-  funE (tap-hold-next-release 300 esc (layer-toggle function))
+  funE (tap-hold-next-release 300 esc (layer-toggle navigation))
+  navA (tap-hold-next-release 300 a (layer-toggle navigation))
+  winW (tap-hold-next-release 300 w (layer-toggle window))
   cF (tap-hold-next-release 300 f lctl)
   sD (tap-hold-next-release 300 d lsft)
   aS (tap-hold-next-release 300 s lalt)
@@ -38,6 +40,7 @@
   g' (tap-hold-next-release 300 ' lmet)
   ;; bonus layer toggles
   nW (tap-hold-next-release 300 w (layer-toggle numbers))
+  nR (tap-hold-next-release 300 r (layer-toggle numbers))
   sE (tap-hold-next-release 300 e (layer-toggle symbols))
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
   sI (tap-hold-next-release 300 i (layer-toggle symbols))
@@ -47,14 +50,24 @@
   ccV (tap-hold 500 v (around lctl v))
   ccX (tap-hold 500 x (around lctl x))
   ccZ (tap-hold 500 z (around lctl z))
-  bfun (tap-hold-next-release 300 bspc (layer-toggle function))
   
+  ;; window management
+  w1 (around lmet 1)
+  w2 (around lmet 2)
+  w3 (around lmet 3)
+  w4 (around lmet 4)
+  w5 (around lmet 5)
+  w6 (around lmet 6)
+  w7 (around lmet 7)
+  w8 (around lmet 8)
+  w9 (around lmet 9)
+
 
   ;; navigation
   bw (around lctl left)
   fw (around lctl rght)
 
-  fun (tap-hold-next-release 300 (around lctl spc) (layer-toggle function) )
+  fun (tap-hold-next-release 300 (around lctl spc) (layer-toggle navigation) )
   
   W1 (around lmet 1)
   W2 (around lmet 2)
@@ -84,12 +97,12 @@
   )
 
 (deflayer base
-  esc    f1    f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
-  `      _     _    _    _    _    _    _    _    _    _    /     =      _            home
-  @tnum  q     @nW  e    r    t    y    u    i    o    p    [     ]      _            pgup
-  @funE  @gA   @aS  @sD  @cF  @s2G h    @cJ  @sK  @aL  @g'  '     \                   pgdn
-  @fun   @ccZ  @ccX @ccC @ccV b    n    m    ,    .    -    @fun          up                end
-  ret    lmet  bspc      @spcsym   ret   cmps rctl                 left   down   rght
+  esc    f1    f2    f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
+  `      _     _     _    _    _    _    _    _    _    _    /     =      _            home
+  @tnum  q     @winW e    @nR    t    y    u    i    o    p    [     ]      _            pgup
+  @funE  @navA @aS   @sD  @cF  @s2G h    @cJ  @sK  @aL  @g'  '     \                   pgdn
+  @fun   @ccZ  @ccX  @ccC @ccV b    n    m    ,    .    -    @fun          up                end
+  ret    lmet  bspc       @spcsym   ret   cmps rctl                 left   down   rght
   )
 
 
@@ -120,12 +133,21 @@
   _      _     _         0         _    _    _                    _       _     _
   )
 
-(deflayer function
+(deflayer navigation
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      _     _    @fw  _    _    _    pgup _    _    up   _     _       _                _
   _      _     _    lsft lctl _    left down up   rght _    _     _                        _
   _      _     _    _    _    @bw  down pgdn _    _    _    _             _                _
-  _      _     _         prnt      _    _    _                    _       _     _
+  _      _     _         spc       ret    _    _                    _       _     _
+  )
+
+(deflayer window
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    @w1  @w2  @w3  _    _     _                        _
+  _       _     _    _    _    _    _    _    _    _    _    _             _                _
+  _       _     _         _         _    _    _                    _       _     _
   )
 
