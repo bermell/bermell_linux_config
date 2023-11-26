@@ -48,6 +48,7 @@
   ccX (tap-hold 500 x (around lctl x))
   ccZ (tap-hold 500 z (around lctl z))
   bfun (tap-hold-next-release 300 bspc (layer-toggle function))
+  
 
   ;; navigation
   bw (around lctl left)
@@ -68,6 +69,18 @@
   w_r (around lmet right)
   w_u (around lmet up)
   w_d (around lmet down)
+
+  
+  ;; tmux
+  cspc (around lctl spc)
+  to (tap-macro @cspc o)
+  tn (tap-macro @cspc n)
+  tp (tap-macro @cspc p)
+  tz (tap-macro @cspc z)
+  tsv (tap-macro @cspc -)
+  tsh (tap-macro @cspc |)
+  ty (tap-macro @cspc y)
+  txy (tap-macro @cspc x y)
   )
 
 (deflayer base
@@ -92,10 +105,10 @@
 (deflayer tmux
   _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    _    _    _    _    _     _                        _
-  _       _     _    _    _    _    _    _    _    _    _    _             _                _
-  _       _     _         _         _    _    _                    _       _     _
+  _       _     _    _    _    _    _    _    _    @ty  _    _     _       _                _
+  _       _     _    _    _    _    @tp  @to  _    @tn  @tz  _     _                        _
+  _       _     _    _    _    _    _    _    _    @tsh @tsv _             _                _
+  _       _     @txy      _         _    _    _                    _       _     _
 )
 
 (deflayer numbers
