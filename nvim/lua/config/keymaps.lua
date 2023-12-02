@@ -10,11 +10,6 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("i", "<A-h>", "<C-o>h", { silent = true })
-map("i", "<A-j>", "<C-o>j", { silent = true })
-map("i", "<A-k>", "<C-o>k", { silent = true })
-map("i", "<A-l>", "<C-o>l", { silent = true })
-
 -- imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 -- vim.g.copilot_no_tab_map = true
 
@@ -34,7 +29,5 @@ map("n", "<leader>D", ":DockerToolsToggle<CR>", { silent = true })
 -- vim.api.nvim_set_keymap("i", "<C-f>", "v:lua.copilot_accept()", { expr = true, silent = true })
 -- vim.g.copilot_no_tab_map = true
 
--- map <leader>cb to running black in the current buffers
-map("n", "<leader>cb", ":!black %<CR>", { silent = true })
-
 -- <C-e> closes the popup menu for auto completion
+
