@@ -31,3 +31,17 @@ map("n", "<leader>D", ":DockerToolsToggle<CR>", { silent = true })
 
 -- <C-e> closes the popup menu for auto completion
 
+-- Octo keymaps
+map("n", "<leader>op", ":Octo pr list<CR>", { silent = true })
+
+-- opens a new tab with the diff of the PR
+map("n", "<leader>od", ":Octo pr diff<CR>", { silent = true })
+map("n", "<leader>ol", "%!diff-so-fancy", { silent = true })
+
+local function BaleiaColorize()
+  -- format with Ansi color codes (to get diff-so-fancy to work)
+  local baleia = require("baleia").setup({})
+  baleia.once(vim.api.nvim_get_current_buf())
+end
+vim.api.nvim_create_user_command("BaleiaColorize", BaleiaColorize, {})
+map("n", "<leader>of", ":BaleiaColorize<CR>", { silent = true })
