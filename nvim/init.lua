@@ -3,6 +3,9 @@ vim.g.python3_host_prog = "/usr/bin/python3"
 require("config.lazy")
 vim.o.scrolloff = 10
 
+vim.wo.number = true
+vim.wo.relativenumber = false
+
 -- HAPOON nvim
 local harpoon = require("harpoon")
 harpoon:setup()
