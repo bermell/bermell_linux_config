@@ -132,10 +132,10 @@ return {
             react_confused = { lhs = "<space>rc", desc = "add/remove 😕 reaction" },
           },
           submit_win = {
-            approve_review = { lhs = "<C-a>", desc = "approve review" },
-            comment_review = { lhs = "<C-m>", desc = "comment review" },
-            request_changes = { lhs = "<C-r>", desc = "request changes review" },
-            close_review_tab = { lhs = "<C-c>", desc = "close review tab" },
+            approve_review = { lhs = "<space>pra", desc = "approve review" },
+            comment_review = { lhs = "space>prc", desc = "comment review" },
+            request_changes = { lhs = "space>prr", desc = "request changes review" },
+            close_review_tab = { lhs = "space>prc", desc = "close review tab" },
           },
           review_diff = {
             add_review_comment = { lhs = "<space>ca", desc = "add a new review comment" },
