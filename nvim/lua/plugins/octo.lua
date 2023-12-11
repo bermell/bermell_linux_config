@@ -131,12 +131,12 @@ return {
             react_laugh = { lhs = "<space>rl", desc = "add/remove 😄 reaction" },
             react_confused = { lhs = "<space>rc", desc = "add/remove 😕 reaction" },
           },
-          submit_win = {
-            approve_review = { lhs = "<space>pra", desc = "approve review" },
-            comment_review = { lhs = "space>prc", desc = "comment review" },
-            request_changes = { lhs = "space>prr", desc = "request changes review" },
-            close_review_tab = { lhs = "space>prc", desc = "close review tab" },
-          },
+          -- submit_win = {
+          --   approve_review = { lhs = "", desc = "approve review" },
+          --   comment_review = { lhs = "space>prc", desc = "comment review" },
+          --   request_changes = { lhs = "space>prr", desc = "request changes review" },
+          --   close_review_tab = { lhs = "space>prc", desc = "close review tab" },
+          -- },
           review_diff = {
             add_review_comment = { lhs = "<space>ca", desc = "add a new review comment" },
             add_review_suggestion = { lhs = "<space>sa", desc = "add a new review suggestion" },
