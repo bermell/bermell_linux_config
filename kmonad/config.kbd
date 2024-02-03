@@ -139,7 +139,7 @@
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
   _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      _     _    @fw  _    _    _    pgup _    _    up   _     _       _                _
-  _      _     _    lsft lctl _    left down up   rght ret  _     _                        _
+  _      _     lalt lsft lctl _    left down up   rght ret  _     _                        _
   _      _     _    _    _    @bw  down pgdn _    _    _    _             _                _
   _      _     _         spc       _    _    _                    _       _     _
   )
