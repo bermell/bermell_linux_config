@@ -29,10 +29,10 @@
   tnum (tap-hold-next-release 300 tab (layer-toggle numbers))
   funE (tap-hold-next-release 300 esc (layer-toggle navigation))
   navA (tap-hold-next-release 300 a (layer-toggle navigation))
-  winW (tap-hold-next-release 300 w (layer-toggle window))
   winS (tap-hold-next-release 300 s (layer-toggle window))
   cF (tap-hold-next-release 300 f lctl)
   sD (tap-hold-next-release 300 d lsft)
+  aW (tap-hold-next-release 300 w lalt)
   aS (tap-hold-next-release 300 s lalt)
   gA (tap-hold-next-release 300 a lmet)
   cJ (tap-hold-next-release 300 j lctl)
@@ -101,8 +101,8 @@
 (deflayer base
   esc    f1    f2    f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
   `      _     _     _    _    _    _    _    _    _    _    /     =      _            home
-  @tnum  q     @winW e    @nR    t    y    u    i    o    p    [     ]      _            pgup
-  @funE  @navA @winS   @sD  @cF  @s2G h    @cJ  @sK  @aL  @se'  '     \                   pgdn
+  @tnum  q     @aW   e    @nR    t    y    u    i    o    p    [     ]      _            pgup
+  @funE  @navA @winS @sD  @cF  @s2G h    @cJ  @sK  @aL  @se'  '     \                   pgdn
   @fun   @ccZ  @ccX  @ccC @ccV b    n    m    ,    .    -    @fun          up                end
   ret    lmet  bspc       @spcsym   ret   cmps rctl                 left   down   rght
   )
