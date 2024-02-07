@@ -38,7 +38,6 @@
   cJ (tap-hold-next-release 300 j lctl)
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
-  se' (tap-hold-next-release 300 ' (layer-toggle silly_enter))
   ;; bonus layer toggles
   nW (tap-hold-next-release 300 w (layer-toggle numbers))
   nR (tap-hold-next-release 300 r (layer-toggle numbers))
@@ -95,15 +94,15 @@
   tsv (tap-macro @cspc -)
   tsh (tap-macro @cspc |)
   ty (tap-macro @cspc y)
-  txy (tap-macro @cspc x y)
+  txy (tap-macro @cspc x P10 y)
   )
 
 (deflayer base
   esc    f1    f2    f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
   `      _     _     _    _    _    _    _    _    _    _    /     =      _            home
-  @tnum  q     @aW   e    @nR    t    y    u    i    o    p    [     ]      _            pgup
-  @funE  @navA @winS @sD  @cF  @s2G h    @cJ  @sK  @aL  @se'  '     \                   pgdn
-  @fun   @ccZ  @ccX  @ccC @ccV b    n    m    ,    .    -    @fun          up                end
+  @tnum  q     @aW   e    @nR  t    y    u    i    o    p    [     ]      _            pgup
+  @funE  @navA @winS @sD  @cF  @s2G h    @cJ  @sK  @aL  '    '     \                   pgdn
+  _      @ccZ  @ccX  @ccC @ccV b    n    m    ,    .    -    _          up                end
   ret    lmet  bspc       @spcsym   ret   cmps rctl                 left   down   rght
   )
 
@@ -152,13 +151,3 @@
   _       _     _    _    _    _    _    @w4  @w5  @w6  _    _             _                _
   _       _     _         _         _    _    _                    _       _     _
   )
-
-(deflayer silly_enter
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    ret  _    _    _    _     _                        _
-  _       _     _    _    _    _    _    _    _    _    _    _             _                _
-  _       _     _         _         _    _    _                    _       _     _
-  )
-
