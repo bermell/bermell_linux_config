@@ -75,6 +75,7 @@ if vim.g.neovide == true then
   -- vim.o.guifont = "Operator Mono,FiraCode NF:h14"
   vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 
+  -- these are also set in neovide config file...
   vim.g.gui_font_default_size = 12
   vim.g.gui_font_size = vim.g.gui_font_default_size
   vim.g.gui_font_face = "Hack Nerd Font"
