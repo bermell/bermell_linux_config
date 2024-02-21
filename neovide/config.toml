@@ -1,3 +1,4 @@
 [font]
-normal = ["MonoLisa Nerd Font"] # what's my stupid nerd font called?
+# these are also set in the neovim keymap config, for some reason
+normal = ["Hack Nerd Font"]
 size = 10

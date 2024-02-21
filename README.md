@@ -83,6 +83,10 @@ fc-cache -fv
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 mv nvim.appimage ~/.config/nvim/nvim.appimage
 chmod +x ~/.config/nvim/nvim.appimage
+
+wget https://github.com/neovide/neovide/releases/download/0.12.2/neovide.AppImage
+mv neovide.AppImage ~/.config/nvim/neovide.appimage
+chmod +x ~/.config/nvim/neovide.appimage
 ```
 
 ### Rust
