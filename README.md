@@ -22,7 +22,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ```shell
-cargo install sd tldr
+cargo install sd tldr zellij
 ```
 
 ## Snap installs

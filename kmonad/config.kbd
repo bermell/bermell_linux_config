@@ -85,7 +85,7 @@
 
   
   ;; tmux
-  cspc (around lctl spc)
+  cspc (around lctl b)
   to (tap-macro @cspc o)
   tn (tap-macro @cspc n)
   tp (tap-macro @cspc p)
