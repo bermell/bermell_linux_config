@@ -45,3 +45,4 @@ lazysql
 remmina
 pavucontrol.ini
 nvim/neovide.appimage
+zellij/bin/*
