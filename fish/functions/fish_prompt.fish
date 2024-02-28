@@ -31,11 +31,11 @@ function fish_prompt --description 'Write out the prompt'
     echo -e -n $prompt
 
     # test if the length of prompt is longer than the terminal width
-    set -l prompt_length (string length $prompt)
-    set -l terminal_width (command tput cols)
-    if test $prompt_length -gt (math $terminal_width - 40)
-        echo -e -n "\n"
-    end
+    # set -l prompt_length (string length $prompt)
+    # set -l terminal_width (command tput cols)
+    # if test $prompt_length -gt (math $terminal_width - 40)
+    echo -e -n "\n"
+    # end
 
     echo -e -n $final_prompt
 end
