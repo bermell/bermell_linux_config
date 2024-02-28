@@ -1,5 +1,5 @@
 function platform --wraps=cd --description 'does docker compose up or down for the platform'
-    set -l platform_directory /home/mattias/repos/product-platform-glitchfinder/docker/platform-local
+    set -l platform_directory /home/mattias/repos/platform/docker/platform-local
     set -l profiles --profile jobs_service --profile no-authentication --profile build
 
     cd $platform_directory

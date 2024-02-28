@@ -1,3 +1,3 @@
 function nvplatform --wraps='nv ~/.config/' --description 'alias nvconfig nv ~/.config/'
-    cd ~/repos/product-platform-glitchfinder/ && nv
+    cd ~/repos/platform/ && nv
 end
