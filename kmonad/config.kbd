@@ -66,6 +66,8 @@
   ;; navigation
   bw (around lctl left)
   fw (around lctl rght)
+  ctab (around lctl tab)
+  cstb (around lctl (around lsft tab))
 
   fun (tap-hold-next-release 300 (around lctl spc) (layer-toggle navigation) )
   
@@ -82,6 +84,7 @@
   w_r (around lmet right)
   w_u (around lmet up)
   w_d (around lmet down)
+
 
   
   ;; tmux
@@ -144,10 +147,10 @@
   )
 
 (deflayer window
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    @w7  @w8  @w9  _    _     _       _                _
-  _       _     _    _    _    _    _    @w1  @w2  @w3  _    _     _                        _
-  _       _     _    _    _    _    _    @w4  @w5  @w6  _    _             _                _
+  _       _     _    _    _    _    _     _    _    _    _     _     _       _     _     _    _
+  _       _     _    _    _    _    _     _    _    _    _     _     _       _                _
+  _       _     _    _    _    _    _     @w7  @w8  @w9  _     _     _       _                _
+  _       _     _    _    _    _    @cstb @w1  @w2  @w3  @ctab _     _                        _
+  _       _     _    _    _    _    _     @w4  @w5  @w6  _     _             _                _
   _       _     _         _         _    _    _                    _       _     _
   )
