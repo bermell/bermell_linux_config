@@ -1,5 +1,11 @@
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = {
+    {
+      "isak102/telescope-git-file-history.nvim",
+      dependencies = { "tpope/vim-fugitive" },
+    },
+  },
   keys = {
       -- add a keymap to browse plugin files
       -- stylua: ignore

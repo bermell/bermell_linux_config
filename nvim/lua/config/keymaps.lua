@@ -10,15 +10,10 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
--- vim.g.copilot_no_tab_map = true
+map("n", "<leader>gF", ":Telescope git_file_history<CR>", { silent = true })
 
--- map("i", "<C-f>", "", {
---   callback = function()
---     require("copilot.suggestion").accept()
---   end,
---   desc = "accept copilot suggestion",
--- })
+-- Copilot keymaps
+--
 vim.api.nvim_set_keymap("i", "<C-n>", "<Plug>(copilot-next)", { silent = true })
 vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>(copilot-previous)", { silent = true })
 vim.api.nvim_set_keymap("i", "<M-d>", "<Plug>(copilot-dismiss)", { silent = true })
