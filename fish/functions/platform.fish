@@ -26,7 +26,7 @@ function platform --wraps=cd --description 'does docker compose up or down for t
     else if test "$argv[1]" = down
         set -f compose_args $all_profiles down --remove-orphans
     else if test "$argv[1]" = watch
-        set -f compose_args $profiles $no_auth_profile watch
+        set -f compose_args $profiles $no_auth_profile watch --no-up
     else if test "$argv[1]" = watch-auth
         set -f compose_args $profiles $auth_profile watch
     else
