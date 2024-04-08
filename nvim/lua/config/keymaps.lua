@@ -11,6 +11,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map("n", "<leader>gF", ":Telescope git_file_history<CR>", { silent = true })
+map("n", "<leader>bn", ":enew<CR>", { silent = true })
 
 -- Copilot keymaps
 --
