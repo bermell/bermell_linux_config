@@ -18,8 +18,6 @@ map("n", "<leader>bn", ":enew<CR>", { silent = true })
 -- Copilot and CopilotChat keymaps
 wk.register({ C = { name = "Copilot" } }, { prefix = "<leader>", mode = "n", silent = true, noremap = true })
 
-map("n", "<leader>Cc", ":CopilotChatOpen<CR>", { silent = true, desc = "Open Copilot Chat" })
-
 vim.api.nvim_set_keymap("i", "<C-n>", "<Plug>(copilot-next)", { silent = true })
 vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>(copilot-previous)", { silent = true })
 vim.api.nvim_set_keymap("i", "<M-d>", "<Plug>(copilot-dismiss)", { silent = true })
