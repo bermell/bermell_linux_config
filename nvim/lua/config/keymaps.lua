@@ -10,33 +10,37 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+local wk = require("which-key")
+
 map("n", "<leader>gF", ":Telescope git_file_history<CR>", { silent = true })
 map("n", "<leader>bn", ":enew<CR>", { silent = true })
 
--- Copilot keymaps
---
+-- Copilot and CopilotChat keymaps
+wk.register({ C = { name = "Copilot" } }, { prefix = "<leader>", mode = "n", silent = true, noremap = true })
+
+map("n", "<leader>Cc", ":CopilotChatOpen<CR>", { silent = true, desc = "Open Copilot Chat" })
+
 vim.api.nvim_set_keymap("i", "<C-n>", "<Plug>(copilot-next)", { silent = true })
 vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>(copilot-previous)", { silent = true })
 vim.api.nvim_set_keymap("i", "<M-d>", "<Plug>(copilot-dismiss)", { silent = true })
--- vim.api.nvim_set_keymap("i", "<C-f>", "<Plug>(copilot-accept)", { silent = true, noremap = false })
 map("i", "<M-f>", 'copilot#Accept("")', { expr = true, silent = true })
-map("n", "<leader>cp", ":Copilot panel<CR>", { silent = true })
+map("n", "<leader>Cp", ":Copilot panel<CR>", { silent = true, desc = "Copilot panel" })
+
+-- LazyDocker keymap
 map("n", "<leader>D", ":LazyDocker<CR>", { silent = true })
 
 -- Octo keymaps
+wk.register({ o = { name = "github (Octo)" } }, { prefix = "<leader>", mode = "n", silent = true, noremap = true })
 map("n", "<leader>op", ":Octo pr list<CR>", { silent = true, desc = "List repo PRs" })
-
--- opens a new tab with the diff of the PR
 map("n", "<leader>od", ":Octo pr diff<CR>", { silent = true, desc = "Diff PR" })
--- reformats the diff message with diff-so-fancy
 
 local function BaleiaColorize()
+  -- reformats the diff message with diff-so-fancy
   -- format with Ansi color codes (to get diff-so-fancy to work)
   local baleia = require("baleia").setup({})
   baleia.once(vim.api.nvim_get_current_buf())
 end
 vim.api.nvim_create_user_command("BaleiaColorize", BaleiaColorize, {})
-
 map("n", "<leader>of", ":%!diff-so-fancy<CR>:BaleiaColorize<CR>", { silent = true, desc = "Fancy format diff" })
 
 -- HAPOON nvim
