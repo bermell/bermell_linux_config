@@ -47,3 +47,5 @@ pavucontrol.ini
 nvim/neovide.appimage
 zellij/bin/*
 evince
+MongoDB Compass
+menus
