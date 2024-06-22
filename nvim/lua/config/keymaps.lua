@@ -27,20 +27,6 @@ map("n", "<leader>Cp", ":Copilot panel<CR>", { silent = true, desc = "Copilot pa
 -- LazyDocker keymap
 map("n", "<leader>D", ":LazyDocker<CR>", { silent = true })
 
--- Octo keymaps
-wk.register({ o = { name = "github (Octo)" } }, { prefix = "<leader>", mode = "n", silent = true, noremap = true })
-map("n", "<leader>op", ":Octo pr list<CR>", { silent = true, desc = "List repo PRs" })
-map("n", "<leader>od", ":Octo pr diff<CR>", { silent = true, desc = "Diff PR" })
-
-local function BaleiaColorize()
-  -- reformats the diff message with diff-so-fancy
-  -- format with Ansi color codes (to get diff-so-fancy to work)
-  local baleia = require("baleia").setup({})
-  baleia.once(vim.api.nvim_get_current_buf())
-end
-vim.api.nvim_create_user_command("BaleiaColorize", BaleiaColorize, {})
-map("n", "<leader>of", ":%!diff-so-fancy<CR>:BaleiaColorize<CR>", { silent = true, desc = "Fancy format diff" })
-
 -- HAPOON nvim
 local harpoon = require("harpoon")
 harpoon:setup()

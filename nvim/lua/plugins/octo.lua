@@ -1,3 +1,18 @@
+local function BaleiaColorize()
+  -- reformats the diff message with diff-so-fancy
+  -- format with Ansi color codes (to get diff-so-fancy to work)
+  local baleia = require("baleia").setup({})
+  baleia.once(vim.api.nvim_get_current_buf())
+end
+
+vim.api.nvim_create_user_command("BaleiaColorize", BaleiaColorize, {})
+
+--
+require("which-key").register(
+  { o = { name = "github (Octo)" } },
+  { prefix = "<leader>", mode = "n", silent = true, noremap = true }
+)
+
 return {
   {
     "pwntester/octo.nvim",
@@ -5,6 +20,11 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
       "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+      { "<leader>op", ":Octo pr list<CR>", desc = "List repo PRs" },
+      { "<leader>od", ":Octo pr diff<CR>", desc = "Diff PR" },
+      { "<leader>of", ":%!diff-so-fancy<CR>:BaleiaColorize<CR>", desc = "Fancy format diff" },
     },
     config = function()
       require("octo").setup({
