@@ -27,27 +27,6 @@ map("n", "<leader>Cp", ":Copilot panel<CR>", { silent = true, desc = "Copilot pa
 -- LazyDocker keymap
 map("n", "<leader>D", ":LazyDocker<CR>", { silent = true })
 
--- HAPOON nvim
-local harpoon = require("harpoon")
-harpoon:setup()
-vim.keymap.set("n", "<leader>a", function()
-  harpoon:list():append()
-end, { silent = true, desc = "Add harpoon bookmark" })
--- show the harpoon list of shortcuts. from here you can open them and remove them (need to save to take effect).
-vim.keymap.set("n", "<C-a>", function()
-  harpoon.ui:toggle_quick_menu(harpoon:list())
-end, { silent = true, desc = "Show harpoon list" })
--- jump to first harpoon bookmark, etc.
-vim.keymap.set("n", "<C-n>", function()
-  harpoon:list():select(1)
-end, { silent = true, desc = "harpoon bookmark 1" })
-vim.keymap.set("n", "<C-e>", function()
-  harpoon:list():select(2)
-end, { silent = true, desc = "harpoon bookmark 2" })
-vim.keymap.set("n", "<C-i>", function()
-  harpoon:list():select(3)
-end, { silent = true, desc = "harpoon bookmark 3" })
-
 if vim.g.neovide == true then
   -- vim.cmd 'set guifont=Hack\ NF:h10'
   -- vim.o.guifont='Consolas:h10'
