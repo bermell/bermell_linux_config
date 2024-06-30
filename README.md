@@ -110,6 +110,7 @@ like `lazygit` for docker. Awesome!
 ```shell
 ln -s $HOME/.config/gitconfig $HOME/.gitconfig
 ln -s $HOME/.config/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.config/prettierrc $HOME/.prettierrc
 ```
 
 ## Personalization
