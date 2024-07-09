@@ -29,9 +29,10 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     keys = {
-      { "<leader>gp", ":Octo pr list<CR>", desc = "List repo PRs" },
-      { "<leader>god", ":Octo pr diff<CR>", desc = "Diff PR" },
-      { "<leader>gof", ":%!diff-so-fancy<CR>:BaleiaColorize<CR>", desc = "Fancy format diff" },
+      { "<leader>opl", ":Octo pr list<CR>", desc = "List repo PRs" },
+      { "<leader>opdd", ":Octo pr diff<CR>", desc = "Diff PR" },
+      { "<leader>oprf", ":Octo review submit<CR>", desc = "Finish (submit) review" },
+      { "<leader>opdf", ":%!diff-so-fancy<CR>:BaleiaColorize<CR>", desc = "Fancy format the diff" },
     },
     config = function()
       require("octo").setup({
@@ -142,6 +143,7 @@ return {
             squash_and_merge_pr = { lhs = "<space>opsm", desc = "squash and merge PR" },
           },
           review_thread = {
+            submit_review = { lhs = "<space>ops", desc = "submit review" },
             add_comment = { lhs = "<space>opc", desc = "add comment" },
             add_suggestion = { lhs = "<space>sa", desc = "add suggestion" },
             close_review_tab = { lhs = "<C-c>", desc = "close review tab" },
