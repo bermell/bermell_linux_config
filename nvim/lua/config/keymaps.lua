@@ -16,7 +16,9 @@ map("n", "<leader>gF", ":Telescope git_file_history<CR>", { silent = true })
 map("n", "<leader>bn", ":enew<CR>", { silent = true })
 
 -- Copilot and CopilotChat keymaps
-wk.register({ C = { name = "Copilot" } }, { prefix = "<leader>", mode = "n", silent = true, noremap = true })
+wk.add({
+  { "<leader>C", group = "Copilot", remap = false },
+})
 
 vim.api.nvim_set_keymap("i", "<C-n>", "<Plug>(copilot-next)", { silent = true })
 vim.api.nvim_set_keymap("i", "<C-p>", "<Plug>(copilot-previous)", { silent = true })
@@ -26,43 +28,3 @@ map("n", "<leader>Cp", ":Copilot panel<CR>", { silent = true, desc = "Copilot pa
 
 -- LazyDocker keymap
 map("n", "<leader>D", ":LazyDocker<CR>", { silent = true })
-
-if vim.g.neovide == true then
-  -- vim.cmd 'set guifont=Hack\ NF:h10'
-  -- vim.o.guifont='Consolas:h10'
-  -- vim.o.guifont='FiraCode NF:h14'
-  -- vim.o.guifont = "Operator Mono,FiraCode NF:h14"
-  vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
-
-  -- these are also set in neovide config file...
-  vim.g.gui_font_default_size = 12
-  vim.g.gui_font_size = vim.g.gui_font_default_size
-  vim.g.gui_font_face = "Hack Nerd Font"
-  RefreshGuiFont = function()
-    vim.opt.guifont = string.format("%s:h%s", vim.g.gui_font_face, vim.g.gui_font_size)
-  end
-
-  ResizeGuiFont = function(delta)
-    vim.g.gui_font_size = vim.g.gui_font_size + delta
-    RefreshGuiFont()
-  end
-
-  ResetGuiFont = function()
-    vim.g.gui_font_size = vim.g.gui_font_default_size
-    RefreshGuiFont()
-  end
-
-  -- Call function on startup to set default value
-  ResetGuiFont()
-
-  -- Keymaps
-
-  local opts = { noremap = true, silent = true }
-
-  vim.keymap.set({ "n", "i" }, "<C-+>", function()
-    ResizeGuiFont(1)
-  end, opts)
-  vim.keymap.set({ "n", "i" }, "<C-->", function()
-    ResizeGuiFont(-1)
-  end, opts)
-end

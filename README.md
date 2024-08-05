@@ -84,9 +84,6 @@ wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 mv nvim.appimage ~/.config/nvim/nvim.appimage
 chmod +x ~/.config/nvim/nvim.appimage
 
-wget https://github.com/neovide/neovide/releases/download/0.12.2/neovide.AppImage
-mv neovide.AppImage ~/.config/nvim/neovide.appimage
-chmod +x ~/.config/nvim/neovide.appimage
 ```
 
 ### Rust
@@ -117,9 +114,11 @@ ln -s $HOME/.config/prettierrc $HOME/.prettierrc
 
 ### Kmonad - keyboard layout
 
-Download the binary from [kmonad github](https://github.com/kmonad/kmonad/releases).
-Make it executable and put it in `/home/mattias/.local/bin/kmonad`
-We want to run kmonad as a user with the minimal privilages needed [see more](https://dev.to/ram535/kmonad-and-the-power-of-infinite-leader-keys-888).
+Download the binary from
+[kmonad github](https://github.com/kmonad/kmonad/releases). Make it executable
+and put it in `/home/mattias/.local/bin/kmonad` We want to run kmonad as a user
+with the minimal privilages needed
+[see more](https://dev.to/ram535/kmonad-and-the-power-of-infinite-leader-keys-888).
 
 ```shell
 sudo usermod -aG input $USER

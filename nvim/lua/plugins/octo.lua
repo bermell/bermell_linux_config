@@ -9,16 +9,12 @@ vim.api.nvim_create_user_command("BaleiaColorize", BaleiaColorize, {})
 
 --
 local wk = require("which-key")
-wk.register({
-  o = {
-    name = "Octo", -- optional group name
-    r = { "reactions" }, -- just a label. don't create any mapping
-    p = {
-      name = "pull request",
-      a = { "assignee/reviewer" },
-    },
-  },
-}, { prefix = "<leader>" })
+wk.add({
+  { "<leader>o", group = "Octo" },
+  { "<leader>op", group = "pull request" },
+  { "<leader>opa", desc = "assignee/reviewer" },
+  { "<leader>or", desc = "reactions" },
+})
 
 return {
   {
