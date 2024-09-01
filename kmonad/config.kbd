@@ -50,6 +50,8 @@
   ccV (tap-hold 500 v (around lctl v))
   ccX (tap-hold 500 x (around lctl x))
   ccZ (tap-hold 500 z (around lctl z))
+
+
   
   ;; window management
   w1 (around lmet 1)
@@ -86,6 +88,10 @@
   w_d (around lmet down)
 
 
+  ;; special swedish characters
+  ao (tap-macro ralt o a)
+  eeh (tap-macro ralt " a)
+  oo (tap-macro ralt " o)
   
   ;; tmux
   cspc (around lctl b)
@@ -103,8 +109,8 @@
 (deflayer base
   esc    f1    f2    f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
   `      _     _     _    _    _    _    _    _    _    _    /     =      _            home
-  @tnum  q     @aW   e    @nR  t    y    u    i    o    p    [     ]      _            pgup
-  @funE  @navA @winS @sD  @cF  @s2G h    @cJ  @sK  @aL  '    '     \                   pgdn
+  @tnum  q     @aW   e    @nR  t    y    u    i    o    p    @ao   ]      _            pgup
+  @funE  @navA @winS @sD  @cF  @s2G h    @cJ  @sK  @aL  '    @oo   @eeh                   pgdn
   _      @ccZ  @ccX  @ccC @ccV b    n    m    ,    .    -    _          up                end
   ret    lmet  bspc       @spcsym   ret   cmps rctl                 left   down   rght
   )
