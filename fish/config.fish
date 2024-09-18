@@ -15,3 +15,6 @@ end
 pyenv init - | source
 
 fish_user_key_bindings
+
+set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+set -x PATH $JAVA_HOME/bin $PATH
