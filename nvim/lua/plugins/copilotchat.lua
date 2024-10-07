@@ -18,7 +18,7 @@ return {
       debug = false, -- Enable debugging
       model = "gpt-4",
       auto_insert_mode = false,
-      context = "buffer", -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
+      context = "buffers", -- Default context to use, 'buffers', 'buffer' or none (can be specified manually in prompt via @).
     },
   },
 }
