@@ -7,6 +7,9 @@ return {
         ruff_lsp = {},
       },
       setup = {
+        rust_analyzer = function()
+          return true
+        end,
         ruff_lsp = function()
           require("lazyvim.util").lsp.on_attach(function(client, _)
             if client.name == "ruff_lsp" then
