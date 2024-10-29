@@ -103,7 +103,7 @@
   tsv (tap-macro @cspc -)
   tsh (tap-macro @cspc |)
   ty (tap-macro @cspc y)
-  txy (tap-macro @cspc x P10 y)
+  txy (tap-macro @cspc x)
   )
 
 (deflayer base
