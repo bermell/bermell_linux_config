@@ -132,7 +132,7 @@
 (deflayer colemak
   _    _    _    _   _    _   _   _   _   _   _  _   _    _  _  _  _
   `      _     _     _    _     _    _    _    _    _    _    /     =      _            home
-  tab    q     w     f    @numP b         j    l    u    y    ;    @ao   ]      _            pgup
+  tab    q     w     f    @numP b         j    l    u    y    '    @ao   ]      _            pgup
   @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh                   pgdn
   @colOff z    x     c    d     v    spc  k    h    ,    .    /      -     up                end
   _      _     _          _          _    _     _                 left   down   rght
