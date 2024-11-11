@@ -28,3 +28,6 @@ map("n", "<leader>Cp", ":Copilot panel<CR>", { silent = true, desc = "Copilot pa
 
 -- LazyDocker keymap
 map("n", "<leader>D", ":LazyDocker<CR>", { silent = true })
+
+-- remove buffer with ctrl-q
+vim.api.nvim_set_keymap("n", "<C-q>", " bd<CR>", { silent = true })
