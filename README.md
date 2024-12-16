@@ -14,7 +14,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 sudo apt install nodejs tmux htop vim curl git gh make fuse build-essential \
  libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev \
- liblzma-dev fzf btop fd-find kitty exa openjdk-11-jdk
+ liblzma-dev btop fd-find kitty exa openjdk-11-jdk
 ```
 
 ```shell
@@ -46,6 +46,11 @@ python -m pip install virtualfish
 ```
 
 Then you need to do restart computer, then run `vf install`
+
+### fzf
+
+Go to [fzf releases](https://github.com/junegunn/fzf/releases), download the
+appropriate binary. Put it in `~/.local/bin/fzf`.
 
 ### pyenv and python
 
