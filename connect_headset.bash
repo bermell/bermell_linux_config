@@ -31,11 +31,35 @@ connect_headset() {
 	return 1
 }
 
+# Function to disconnect the Bluetooth headset
+disconnect_headset() {
+	echo "Disconnecting Bluetooth headset with MAC address: $HEADSET_MAC"
+
+	# Use bluetoothctl to disconnect
+	echo -e "disconnect $HEADSET_MAC\nexit" | bluetoothctl >/dev/null 2>&1
+
+	# Verify disconnection
+	if bluetoothctl info "$HEADSET_MAC" | grep -q "Connected: yes"; then
+		echo "Failed to disconnect the Bluetooth headset."
+		return 1
+	else
+		echo "Bluetooth headset disconnected successfully."
+		return 0
+	fi
+}
+
 # Ensure bluetoothctl is available
 if ! command -v bluetoothctl &>/dev/null; then
 	echo "bluetoothctl command not found. Please install bluez package."
 	exit 1
 fi
 
-# Run the connection function
-connect_headset
+# Parse command-line arguments
+case "$1" in
+-d | --disconnect)
+	disconnect_headset
+	;;
+*)
+	connect_headset
+	;;
+esac
