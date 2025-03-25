@@ -31,3 +31,12 @@ map("n", "<leader>D", ":LazyDocker<CR>", { silent = true })
 
 -- remove buffer with ctrl-q
 vim.api.nvim_set_keymap("n", "<C-q>", " bd<CR>", { silent = true })
+
+-- make sure this overrides any other mappings
+vim.keymap.set("n", "<leader>ss", ":Namu symbols<cr>", {
+  desc = "Jump to LSP symbol",
+
+  silent = true,
+})
+
+map("n", "<leader>ss", ":Namu symbols<CR>", { silent = true })
