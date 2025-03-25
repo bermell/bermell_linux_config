@@ -38,6 +38,7 @@ disconnect_headset() {
 	# Use bluetoothctl to disconnect
 	echo -e "disconnect $HEADSET_MAC\nexit" | bluetoothctl >/dev/null 2>&1
 
+	sleep 1
 	# Verify disconnection
 	if bluetoothctl info "$HEADSET_MAC" | grep -q "Connected: yes"; then
 		echo "Failed to disconnect the Bluetooth headset."
