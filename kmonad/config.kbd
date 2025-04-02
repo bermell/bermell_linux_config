@@ -52,6 +52,8 @@
   ccX (tap-hold 500 x (around lctl x))
   ccZ (tap-hold 500 z (around lctl z))
 
+  mSKIP (tap-macro left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left [ s k i p spc c i ] spc )
+
   ;; colemak stuff
   colOn (layer-add colemak)
   colOff (layer-rem colemak)
@@ -140,7 +142,7 @@
 
 (deflayer symbols
   _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  @mSKIP _     _    _    _    _    _    _    _    _    _    _     _       _                _
   _      !     @    #    $    %    &    {    \(   \)   }    _     _       _                _
   caps   =     +    *    ^    |    ~    /    :    ?    `    _     _                        _
   _      _     <    <    >    >    _    ;    \_   [    ]    \\   _             _                _
