@@ -2,6 +2,7 @@
 import argparse
 import re
 import subprocess
+from typing import Optional
 
 
 def get_git_commits(n):
@@ -11,7 +12,9 @@ def get_git_commits(n):
 
     Reference: "git log" documentation (https://git-scm.com/docs/git-log)
     """
-    result = subprocess.check_output(["git", "log", "-n", str(n), "--pretty=%s"], text=True)
+    result = subprocess.check_output(
+        ["git", "log", "-n", str(n), "--pretty=%s"], text=True
+    )
     return result.splitlines()
 
 
@@ -28,30 +31,17 @@ def process_commits(commits):
     See: https://docs.python.org/3/library/re.html
     """
     output = []
-    i = 0
-    while i < len(commits):
-        commit = commits[i]
-        # Check if the commit matches the version bump pattern.
-        match_version = re.match(r"\[skip ci\] Version Bumped to (\S+)", commit)
-        if match_version:
-            version = match_version.group(1)
-            # Ensure there is a following commit (assumed merge commit)
-            if i + 1 < len(commits):
-                merge_commit = commits[i + 1]
-                output.append(f"{version} {merge_commit}")
-                i += 2
-                continue
-            else:
-                # No merge commit follows; skip this version bump.
-                i += 1
-                continue
-        # Skip any "[skip ci]" commits that do not match the version bump pattern.
-        if commit.startswith("[skip ci]"):
-            i += 1
-            continue
-        # For all other commits, output them unchanged.
-        output.append(commit)
-        i += 1
+    current_version: Optional[str] = None
+    for commit in commits:
+        if not current_version:
+            # we go look for a current version
+            match_version = re.match(r"\[skip ci\].*?(\d+\.\d+\.\d+)", commit)
+            if match_version:
+                current_version = match_version.group(1)
+        elif not commit.startswith("[skip ci]"):
+            output.append(f"{current_version} {commit}")
+            current_version = None
+
     return output
 
 
@@ -64,7 +54,11 @@ def main(n):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Display git log with version numbers for merge commits.")
-    parser.add_argument("-n", type=int, default=30, help="Number of commits to show (default: 30)")
+    parser = argparse.ArgumentParser(
+        description="Display git log with version numbers for merge commits."
+    )
+    parser.add_argument(
+        "-n", type=int, default=30, help="Number of commits to show (default: 30)"
+    )
     args = parser.parse_args()
     main(args.n)
