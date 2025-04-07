@@ -1,6 +1,6 @@
 function platform --wraps=cd --description 'does docker compose up or down for the platform'
     set -l platform_directory /home/mattias/repos/platform/docker/platform-local
-    set -l profiles --profile jobs_service --profile build --profile flagsmith
+    set -l profiles --profile jobs_service --profile build --profile webhooks #--profile flagsmith
     set -l auth_profile --profile authentication
     set -l no_auth_profile --profile no-authentication
     set -l all_profiles $profiles $auth_profile $no_auth_profile
