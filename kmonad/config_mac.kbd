@@ -1,0 +1,190 @@
+(defcfg
+  input (iokit-name)
+  output (kext)
+  fallthrough true
+)
+
+
+(defsrc
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
+  kprt     1    2    3    4    5    6    7    8    9    0    -     =      bspc              home
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]      ret               pgup
+  caps  a    s    d    f    g    h    j    k    l    ;    '     \                        pgdn
+  lsft  `    z    x    c    v    b    n    m    ,    .    /    rsft         up                end
+  lctl  lmet lalt      spc       ralt cmps rctl                 left   down   rght
+  )
+
+#| ------------------------ TEMPLATE ---------------------
+(deflayer somename
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    _    _    _    _    _     _                        _
+  _       _     _    _    _    _    _    _    _    _    _    _             _                _
+  _       _     _         _         _    _    _                    _       _     _
+  )
+|#
+
+
+
+
+
+(defalias
+  sym (layer-toggle symbols)
+  tnum (tap-hold-next-release 300 tab (layer-toggle numbers))
+  funE (tap-hold-next-release 300 esc (layer-toggle navigation))
+  navA (tap-hold-next-release 300 a (layer-toggle navigation))
+  winS (tap-hold-next-release 300 s (layer-toggle window))
+  cF (tap-hold-next-release 300 f lctl)
+  sD (tap-hold-next-release 300 d lsft)
+  aW (tap-hold-next-release 300 w lalt)
+  aS (tap-hold-next-release 300 s lalt)
+  gA (tap-hold-next-release 300 a lmet)
+  cJ (tap-hold-next-release 300 j lctl)
+  sK (tap-hold-next-release 300 k lsft)
+  aL (tap-hold-next-release 300 l lalt)
+
+  ;; bonus layer toggles
+  nW (tap-hold-next-release 300 w (layer-toggle numbers))
+  nR (tap-hold-next-release 300 r (layer-toggle numbers))
+  nO (tap-hold-next-release 300 o (layer-toggle numbers))
+  sI (tap-hold-next-release 300 i (layer-toggle symbols))
+  spcsym (tap-hold-next-release 300 spc (layer-toggle symbols))
+  s2G (tap-hold-next-release 300 g (layer-toggle tmux))
+  ccC (tap-hold 500 c (around lctl c))
+  ccV (tap-hold 500 v (around lctl v))
+  ccX (tap-hold 500 x (around lctl x))
+  ccZ (tap-hold 500 z (around lctl z))
+
+  mSKIP (tap-macro left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left [ s k i p spc c i ] spc )
+
+  ;; colemak stuff
+  colOn (layer-add colemak)
+  colOff (layer-rem colemak)
+
+  cT (tap-hold-next-release 300 t lctl)
+  sS (tap-hold-next-release 300 s lsft)
+  winR (tap-hold-next-release 300 r (layer-toggle window))
+  tmxG (tap-hold-next-release 300 g (layer-toggle tmux))
+  cN (tap-hold-next-release 300 n lctl)
+  sE (tap-hold-next-release 300 e lsft)
+  aI (tap-hold-next-release 300 i lalt)
+  numP (tap-hold-next-release 300 p (layer-toggle numbers))
+
+
+  
+  ;; window management
+  w1 (around lmet 1)
+  w2 (around lmet 2)
+  w3 (around lmet 3)
+  w4 (around lmet 4)
+  w5 (around lmet 5)
+  w6 (around lmet 6)
+  w7 (around lmet 7)
+  w8 (around lmet 8)
+  w9 (around lmet 9)
+
+
+  ;; navigation
+  bw (around lctl left)
+  fw (around lctl rght)
+  ctab (around lctl tab)
+  cstb (around lctl (around lsft tab))
+
+  fun (tap-hold-next-release 300 (around lctl spc) (layer-toggle navigation) )
+  
+  W1 (around lmet 1)
+  W2 (around lmet 2)
+  W3 (around lmet 3)
+  W4 (around lmet 4)
+  W5 (around lmet 5)
+  W6 (around lmet 6)
+  W7 (around lmet 7)
+  W8 (around lmet 8)
+  W9 (around lmet 9)
+  w_l (around lmet left) 
+  w_r (around lmet right)
+  w_u (around lmet up)
+  w_d (around lmet down)
+
+
+  ;; special swedish characters
+  ao (tap-macro ralt o a)
+  eeh (tap-macro ralt " a)
+  oo (tap-macro ralt " o)
+  
+  ;; tmux
+  cspc (around lctl b)
+  to (tap-macro @cspc o)
+  tn (tap-macro @cspc n)
+  tp (tap-macro @cspc p)
+  tc (tap-macro @cspc c)
+  tz (tap-macro @cspc z)
+  tsv (tap-macro @cspc -)
+  tsh (tap-macro @cspc |)
+  ty (tap-macro @cspc y)
+  txy (tap-macro @cspc x)
+  )
+
+(deflayer base
+  esc    f1    f2    f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
+  `      _     _     _    _    _    _    _    _    _    _    /     =      _            home
+  @tnum  q     @aW   e    @nR  t          y    u    i    o    p    @ao   ]      _            pgup
+  @funE  @navA @winS @sD  @cF  @s2G       h    @cJ  @sK  @aL  '    @oo   @eeh                   pgdn
+  @colOn _     @ccZ  @ccX @ccC @ccV    b  n    m    ,    .    -    _       up                end
+  ret    lmet  bspc       @spcsym   ret   cmps rctl                 left   down   rght
+  )
+
+(deflayer colemak
+  _    _    _    _   _    _   _   _   _   _   _  _   _    _  _  _  _
+  `      _     _     _    _     _    _    _    _    _    _    /     =      _            home
+  tab    q     w     f    @numP b         j    l    u    y    '    @ao   ]      _            pgup
+  @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh                   pgdn
+  @colOff z    x     c    d     v    spc  k    h    ,    .    -      -     up                end
+  _      _     _          _          _    _     _                 left   down   rght
+)
+
+(deflayer symbols
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  @mSKIP _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      !     @    #    $    %    &    {    \(   \)   }    _     _       _                _
+  caps   =     +    *    ^    |    ~    /    :    ?    `    _     _                        _
+  _      _     <    <    >    >    _    ;    \_   [    ]    \\   _             _                _
+  _      _     del       _         _    _    _                    _       _     _
+  )
+
+(deflayer tmux
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _       _     _    _    _    _    _    _    _    @ty  _    _     _       _                _
+  _       _     _    _    _    _    @tp  @to  _    @tn  @tz  _     _                        _
+  _       _     _     _    _    _    _    _    _    _    @tsh @tsv _             _                _
+  _       _     @txy      _         @tc  _    _                    _       _     _
+)
+
+(deflayer numbers
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      _     _    _    _    _    _    7    8    9    _    _     _       _                _
+  _      lmet  lalt lsft lctl _    _    4    5    6    0    _     _                        _
+  _      _     _     _    _    _    _    _    1    2    3    _    _             _                _
+  _      _     _         0         _    _    _                    _       _     _
+  )
+
+(deflayer navigation
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
+  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
+  _      _     _    @fw  _    _    _    pgup _    _    up   _     _       _                _
+  _      _     lalt lsft lctl _    left down up   rght ret  _     _                        _
+  _      _     _     _    _    _    @bw  down pgdn _    _    _    _             _                _
+  _      _     _         spc       _    _    _                    _       _     _
+  )
+
+(deflayer window
+  _       _     _    _    _    _    _     _    _    _    _     _     _       _     _     _    _
+  _       _     _    _    _    _    _     _    _    _    _     _     _       _                _
+  _       _     _    _    _    _    _     @w7  @w8  @w9  _     _     _       _                _
+  _       _     _    _    _    _    @cstb @w1  @w2  @w3  @ctab _     _                        _
+  _       _     _     _    _    _    _    _     @w4  @w5  @w6  _     _             _                _
+  _       _     _         _         _    _    _                    _       _     _
+  )
