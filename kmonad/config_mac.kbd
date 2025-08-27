@@ -6,12 +6,10 @@
 
 
 (defsrc
-  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
-  kprt     1    2    3    4    5    6    7    8    9    0    -     =      bspc              home
-  tab   q    w    e    r    t    y    u    i    o    p    [     ]      ret               pgup
-  caps  a    s    d    f    g    h    j    k    l    ;    '     \                        pgdn
-  lsft  `    z    x    c    v    b    n    m    ,    .    /    rsft         up                end
-  lctl  lmet lalt      spc       ralt cmps rctl                 left   down   rght
+  tab   q    w    e    r    t    y    u    i    o    p    [     ]
+  caps  a    s    d    f    g    h    j    k    l    ;    '     \
+  lsft  `    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lalt lmet       spc      rmet ralt
   )
 
 #| ------------------------ TEMPLATE ---------------------
@@ -58,9 +56,6 @@
 
   mSKIP (tap-macro left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left [ s k i p spc c i ] spc )
 
-  ;; colemak stuff
-  colOn (layer-add colemak)
-  colOff (layer-rem colemak)
 
   cT (tap-hold-next-release 300 t lctl)
   sS (tap-hold-next-release 300 s lsft)
@@ -127,64 +122,44 @@
   )
 
 (deflayer base
-  esc    f1    f2    f3   f4   f5   f6   f7   f8   f9   f10  f11   f12    pause  prnt  ins  del
-  `      _     _     _    _    _    _    _    _    _    _    /     =      _            home
-  @tnum  q     @aW   e    @nR  t          y    u    i    o    p    @ao   ]      _            pgup
-  @funE  @navA @winS @sD  @cF  @s2G       h    @cJ  @sK  @aL  '    @oo   @eeh                   pgdn
-  @colOn _     @ccZ  @ccX @ccC @ccV    b  n    m    ,    .    -    _       up                end
-  ret    lmet  bspc       @spcsym   ret   cmps rctl                 left   down   rght
+  tab    q     w     f    @numP b         j    l    u    y    '    @ao   ]
+  @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh
+  _      z    x     c    d     v    spc  k    h    ,    .    -      -
+  ret    lmet  bspc       @spcsym   ret   cmps              
   )
 
-(deflayer colemak
-  _    _    _    _   _    _   _   _   _   _   _  _   _    _  _  _  _
-  `      _     _     _    _     _    _    _    _    _    _    /     =      _            home
-  tab    q     w     f    @numP b         j    l    u    y    '    @ao   ]      _            pgup
-  @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh                   pgdn
-  @colOff z    x     c    d     v    spc  k    h    ,    .    -      -     up                end
-  _      _     _          _          _    _     _                 left   down   rght
-)
 
 (deflayer symbols
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  @mSKIP _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      !     @    #    $    %    &    {    \(   \)   }    _     _       _                _
-  caps   =     +    *    ^    |    ~    /    :    ?    `    _     _                        _
-  _      _     <    <    >    >    _    ;    \_   [    ]    \\   _             _                _
-  _      _     del       _         _    _    _                    _       _     _
+  _      !     @    #    $    %    &    {    \(   \)   }    _     _  
+  caps   =     +    *    ^    |    ~    /    :    ?    `    _     _   
+  _      _     <    <    >    >    _    ;    \_   [    ]    \\   _ 
+  _      _     del       _         _    _    
   )
 
 (deflayer tmux
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _       _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _       _     _    _    _    _    _    _    _    @ty  _    _     _       _                _
-  _       _     _    _    _    _    @tp  @to  _    @tn  @tz  _     _                        _
-  _       _     _     _    _    _    _    _    _    _    @tsh @tsv _             _                _
-  _       _     @txy      _         @tc  _    _                    _       _     _
+  _       _     _    _    _    _    _    _    _    @ty  _    _    _      
+  _       _     _    _    _    _    @tp  @to  _    @tn  @tz  _    _    
+  _       _     _    _    _    _    _    _    _    _    @tsh @tsv _
+  _       _     @txy      _         @tc  _    
 )
 
 (deflayer numbers
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      _     _    _    _    _    _    7    8    9    _    _     _       _                _
-  _      lmet  lalt lsft lctl _    _    4    5    6    0    _     _                        _
-  _      _     _     _    _    _    _    _    1    2    3    _    _             _                _
-  _      _     _         0         _    _    _                    _       _     _
+  _      _     _    _    _    _    _    7    8    9    _    _     _       
+  _      lmet  lalt lsft lctl _    _    4    5    6    0    _     _      
+  _      _     _     _    _    _    _    _    1    2    3    _    _     
+  _      _     _         0         _    _    
   )
 
 (deflayer navigation
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _     _     _    _
-  _      _     _    _    _    _    _    _    _    _    _    _     _       _                _
-  _      _     _    @fw  _    _    _    pgup _    _    up   _     _       _                _
-  _      _     lalt lsft lctl _    left down up   rght ret  _     _                        _
-  _      _     _     _    _    _    @bw  down pgdn _    _    _    _             _                _
-  _      _     _         spc       _    _    _                    _       _     _
+  _    _   _    @fw   _     _    _     pgup  _     _     up   _  _
+  _    _   lalt lsft  lctl  _    left  down  up    rght  ret  _  _  
+  _    _   _     _    _     _    @bw   down  pgdn  _     _    _  _ 
+  _    _   _         spc       _    _    
   )
 
 (deflayer window
-  _       _     _    _    _    _    _     _    _    _    _     _     _       _     _     _    _
-  _       _     _    _    _    _    _     _    _    _    _     _     _       _                _
-  _       _     _    _    _    _    _     @w7  @w8  @w9  _     _     _       _                _
-  _       _     _    _    _    _    @cstb @w1  @w2  @w3  @ctab _     _                        _
-  _       _     _     _    _    _    _    _     @w4  @w5  @w6  _     _             _                _
-  _       _     _         _         _    _    _                    _       _     _
+  _       _     _    _    _    _    _     @w7  @w8  @w9  _     _  _   
+  _       _     _    _    _    _    @cstb @w1  @w2  @w3  @ctab _  _  
+  _       _     _    _    _    _    _     _    @w4  @w5  @w6   _  _ 
+  _       _     _         _         _    _    
   )
