@@ -338,7 +338,7 @@ scrollback_editor "nvim"
 
 // The folder in which Zellij will look for layouts
 //
-layout_dir "/home/mattias/.config/zellij/layouts"
+layout_dir "layouts"
 
 // The folder in which Zellij will look for themes
 //

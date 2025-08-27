@@ -53,3 +53,4 @@ packer
 go/telemetry/local
 Google/AndroidStudio2023.3
 microsoft-edge
+.DS_Store
