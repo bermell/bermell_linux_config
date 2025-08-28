@@ -14,8 +14,8 @@
 
 #| ------------------------ TEMPLATE ---------------------
 (deflayer somename
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _         _    _    _    _    _    _    _
+  _    _    _    _    _    _         _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _
@@ -36,6 +36,8 @@
   cJ (tap-hold-next-release 300 j lctl)
   sK (tap-hold-next-release 300 k lsft)
   aL (tap-hold-next-release 300 l lalt)
+  mD (tap-hold-next-release 300 d lmet)
+  mH (tap-hold-next-release 300 h lmet)
 
   ;; bonus layer toggles
   nW (tap-hold-next-release 300 w (layer-toggle numbers))
@@ -58,9 +60,36 @@
   tmxG (tap-hold-next-release 300 g (layer-toggle tmux))
   cN (tap-hold-next-release 300 n lctl)
   sE (tap-hold-next-release 300 e lsft)
-  aI (tap-hold-next-release 300 i lalt)
+  aI (tap-hold-next-release 300 i lmet)
   numP (tap-hold-next-release 300 p (layer-toggle numbers))
 
+  ;; Amethyst things
+  mod1 (around lalt lsft)
+  mod2 (around @mod1 lctl)
+
+  ;; cycle layout - mod1/mod2 space 
+  laycycle (around @mod1 spc)  ;; check
+  laycycle2 (around @mod2 spc)
+
+  ;; main pane, shrink/expand: l h 
+  mpshr (around @mod1 l)
+  mppmp (around @mod1 h)
+
+  ;; main pane, inc/decr count: , . 
+  mpcnti (around @mod1 ,)
+  mpcntd (around @mod1 .)
+
+  ;; main pane, make focused win to main: modl+ret
+  focmp (around @mod1 ret)
+
+  ;; focus window, move: j k 
+  foccycle (around @mod1 j)
+  foccycle2 (around @mod1 k)
+
+  ;; focus screen, move: p n
+  focscrcyc (around @mod1 p)
+  focscrcyc2 (around @mod1 n)
+  ;; 
 
   
   ;; window management
@@ -119,8 +148,8 @@
 (deflayer base
   tab    q     w     f    @numP b         j    l    u    y    '    @ao   ]
   @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh
-  _      z    x     c    d     v    spc  k    h    ,    .    -      -
-  ret    lmet  bspc       @spcsym   ret   cmps              
+  @mod1  z     x     c    @mD   v    spc  k    @mH  ,    .    -      -
+  @mod2    lmet  bspc       @spcsym   ret   cmps              
   )
 
 
@@ -152,9 +181,9 @@
   _    _   _         spc       _    _    
   )
 
-(deflayer window
-  _       _     _    _    _    _    _     @w7  @w8  @w9  _     _  _   
-  _       _     _    _    _    _    @cstb @w1  @w2  @w3  @ctab _  _  
-  _       _     _    _    _    _    _     _    @w4  @w5  @w6   _  _ 
-  _       _     _         _         _    _    
+(deflayer window 
+  _     _     _    _    _    _          _     @focscrcyc @focscrcyc2 @laycycle _     _  _   
+  _     _     _    _    _    _          @cstb @foccycle  @foccycle2  @focmp    @ctab _  _  
+  _     _     _    _    _    _    _     _     @mppmp     @mpshr      _         _     _
+  _     _     _         _         _    _    
   )
