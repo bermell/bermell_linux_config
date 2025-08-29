@@ -33,9 +33,7 @@ function fish_prompt --description 'Write out the prompt'
     set -l cwd (pwd)
     set -l cwd_last (basename $cwd)
 
-    zellij action rename-tab $cwd_last
-
-
+    # zellij action rename-tab $cwd_last
 
     # test if the length of prompt is longer than the terminal width
     # set -l prompt_length (string length $prompt)
