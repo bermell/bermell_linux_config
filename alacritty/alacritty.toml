@@ -2,7 +2,7 @@
 size = 11.0
 
 [window]
-decorations = "None"
+decorations = "Full"
 
 [keyboard]
 # Key bindings
@@ -10,7 +10,7 @@ decorations = "None"
 # ctrl + "+" = Increase font size
 # ctrl + "-" = Decrease font size
 bindings = [
-    { key = "F11", action = "ToggleFullscreen" },
-    { key = ",", mods = "Control", action = "IncreaseFontSize" },
-    { key = "-", mods = "Control", action = "DecreaseFontSize" },
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = ",", mods = "Control", action = "IncreaseFontSize" },
+  { key = "-", mods = "Control", action = "DecreaseFontSize" },
 ]
