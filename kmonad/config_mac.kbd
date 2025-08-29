@@ -40,7 +40,7 @@
   mH (tap-hold-next-release 300 h lmet)
 
   ;; bonus layer toggles
-  nW (tap-hold-next-release 300 w (layer-toggle numbers))
+  w2W (tap-hold-next-release 300 w (layer-toggle window2))
   nR (tap-hold-next-release 300 r (layer-toggle numbers))
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
   sI (tap-hold-next-release 300 i (layer-toggle symbols))
@@ -67,31 +67,33 @@
   mod1 (around lalt lsft)
   mod2 (around @mod1 lctl)
 
-  ;; cycle layout - mod1/mod2 space 
-  laycycle (around @mod1 spc)  ;; check
+  laycycle (around @mod1 spc)  ;; cycle layout
   laycycle2 (around @mod2 spc)
 
-  ;; main pane, shrink/expand: l h 
-  mpshr (around @mod1 l)
+  mpshr (around @mod1 l) ;; shrink expand main pane
   mppmp (around @mod1 h)
 
-  ;; main pane, inc/decr count: , . 
-  mpcnti (around @mod1 ,)
+  mpcnti (around @mod1 ,)  ;; main pane, inc/decr count: , . 
   mpcntd (around @mod1 .)
 
-  ;; main pane, make focused win to main: modl+ret
-  focmp (around @mod1 ret)
+  focmp (around @mod1 ret) ;; make focus window to main pane
 
-  ;; focus window, move: j k 
-  foccycle (around @mod1 j)
+  foccycle (around @mod1 j) ;; focused window cycle
   foccycle2 (around @mod1 k)
 
-  ;; focus screen, move: p n
-  focscrcyc (around @mod1 p)
-  focscrcyc2 (around @mod1 n)
-  ;; 
 
+  scrfocle (around @mod1 p)   ;; screen focus move left/right 
+  scrfocri (around @mod1 n)
+
+  scrthrwle (around @mod2 h)  ;; screen throw focused window left/right
+  scrthrwri (around @mod2 l)
   
+  spcthrwle (around @mod2 left)  ;; space throw focused window left/right
+  spcthrwri (around @mod2 rght)
+  
+  spcmvle (around @mod1 left) ;; space focus move left/right
+  spcmvri (around @mod1 rght)
+
   ;; window management
   w1 (around lmet 1)
   w2 (around lmet 2)
@@ -146,7 +148,7 @@
   )
 
 (deflayer base
-  tab    q     w     f    @numP b         j    l    u    y    '    @ao   ]
+  tab    q     @w2W     f    @numP b         j    l    u    y    '    @ao   ]
   @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh
   @mod1  z     x     c    @mD   v    spc  k    @mH  ,    .    -      -
   @mod2    lmet  bspc       @spcsym   ret   cmps              
@@ -182,8 +184,15 @@
   )
 
 (deflayer window 
-  _     _     _    _    _    _          _     @focscrcyc @focscrcyc2 @laycycle _     _  _   
+  _     _     _    _    _    _          _     _ _   @laycycle _     _  _   
   _     _     _    _    _    _          @cstb @foccycle  @foccycle2  @focmp    @ctab _  _  
   _     _     _    _    _    _    _     _     @mppmp     @mpshr      _         _     _
   _     _     _         _         _    _    
+  )
+
+(deflayer window2
+  _    _    _    _    _    _         _    @scrfocle    @scrthrwle    @scrthrwri    @scrfocri    _    _
+  _    _    _    _    _    _         _    @spcmvle    @spcthrwle    @spcthrwri    @spcmvri    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _
   )
