@@ -71,6 +71,7 @@ keybinds clear-defaults=true {
     //}
     scroll {
         bind "q" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
         bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "G" { ScrollToBottom; SwitchToMode "Normal"; }
@@ -107,12 +108,14 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
     renamepane {
+        bind "Enter" { SwitchToMode "Normal"; }
         bind "Ctrl c" { SwitchToMode "Normal"; }
-        bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
+        bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
     }
     session {
         bind "Ctrl o" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
+        bind "p" { SwitchToMode "renametab"; }
         bind "d" { Detach; }
         bind "w" {
             LaunchOrFocusPlugin "zellij:session-manager" {
@@ -146,6 +149,7 @@ keybinds clear-defaults=true {
         bind "Space" { NextSwapLayout; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "Resize"; }
+        bind "Ctrl o" { SwitchToMode "Session"; }
     }
     //shared_except "locked" {
         //bind "Ctrl g" { SwitchToMode "Locked"; }
@@ -169,9 +173,10 @@ keybinds clear-defaults=true {
     //shared_except "scroll" "locked" {
         //bind "Ctrl s" { SwitchToMode "Scroll"; }
     //}
-    //shared_except "session" "locked" {
-        //bind "Ctrl o" { SwitchToMode "Session"; }
-    //}
+
+    shared_except "normal" "locked" {
+        bind "Esc" { SwitchToMode "Normal"; }
+    }
     //shared_except "tab" "locked" {
         //bind "Ctrl t" { SwitchToMode "Tab"; }
     //}
