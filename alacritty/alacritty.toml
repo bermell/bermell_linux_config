@@ -1,5 +1,7 @@
 [font]
-size = 11.0
+size = 9.0
+# setup nerd font hack
+normal = { family = "Hack Nerd Font" }
 
 [window]
 decorations = "Full"
