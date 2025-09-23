@@ -52,7 +52,8 @@
   ccZ (tap-hold 500 z (around lctl z))
 
   mSKIP (tap-macro left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left [ s k i p spc c i ] spc )
-
+  zelses (tap-macro (around lctl b) (around lctl o) w)
+ 
 
   cT (tap-hold-next-release 300 t lctl)
   sS (tap-hold-next-release 300 s lsft)
@@ -149,8 +150,8 @@
 
 (deflayer base
   tab    q     @w2W     f    @numP b         j    l    u    y    '    @ao   ]
-  @funE  @navA @winR @sS  @cT   @s2G      m    @cN  @sE  @aI  o    @oo   @eeh
-  @mod1  z     x     c    @mD   v    spc  k    @mH  ,    .    -      -
+  @funE  @navA @winR @sS  @cT   @s2G         m    @cN  @sE  @aI  o    @oo   @eeh
+  @mod1  z     x     c    @mD   v    @zelses  k    @mH  ,    .    -      -
   @mod2    lmet  bspc       @spcsym   ret   cmps              
   )
 
