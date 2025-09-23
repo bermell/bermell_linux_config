@@ -149,10 +149,10 @@
   )
 
 (deflayer base
-  tab    q     @w2W     f    @numP b         j    l    u    y    '    @ao   ]
-  @funE  @navA @winR @sS  @cT   @s2G         m    @cN  @sE  @aI  o    @oo   @eeh
-  @mod1  z     x     c    @mD   v    @zelses  k    @mH  ,    .    -      -
-  @mod2    lmet  bspc       @spcsym   ret   cmps              
+  tab    q     @w2W     f    @numP b             j    l    u    y    '    @ao   ]
+  @funE  @navA @winR @sS  @cT   @s2G             m    @cN  @sE  @aI  o    @oo   @eeh
+  @mod1  z     x     c    @mD   v      @zelses   k    @mH  ,    .    -      -
+  @mod2  lalt  bspc                    @spcsym   ret   cmps              
   )
 
 
