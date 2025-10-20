@@ -52,7 +52,7 @@
   ccZ (tap-hold 500 z (around lctl z))
 
   mSKIP (tap-macro left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left left [ s k i p spc c i ] spc )
-  zelses (tap-macro (around lctl b) (around lctl o) w)
+  zelses (tap-macro (around lctl b)  w down)
  
 
   cT (tap-hold-next-release 300 t lctl)
@@ -129,11 +129,10 @@
   w_u (around lmet up)
   w_d (around lmet down)
 
-
   ;; special swedish characters
-  ao (tap-macro ralt o a)
-  eeh (tap-macro ralt " a)
-  oo (tap-macro ralt " o)
+  ao (around lalt a)
+  eeh (tap-macro " a)
+  oo (tap-macro " o)
   
   ;; tmux
   cspc (around lctl b)
@@ -149,7 +148,7 @@
   )
 
 (deflayer base
-  tab    q     @w2W     f    @numP b             j    l    u    y    '    @ao   ]
+  tab    q     @w2W     f    @numP b             j    l    u    y    '    @ao   ] 
   @funE  @navA @winR @sS  @cT   @s2G             m    @cN  @sE  @aI  o    @oo   @eeh
   @mod1  z     x     c    @mD   v      @zelses   k    @mH  ,    .    -      -
   @mod2  lalt  bspc                    @spcsym   ret   cmps              
