@@ -1,5 +1,5 @@
 (defcfg
-  input (iokit-name)
+  input (iokit-name "Apple Internal Keyboard / Trackpad")
   output (kext)
   fallthrough true
 )
@@ -63,6 +63,10 @@
   sE (tap-hold-next-release 300 e lsft)
   aI (tap-hold-next-release 300 i lmet)
   numP (tap-hold-next-release 300 p (layer-toggle numbers))
+
+  ;; Alacritty shortcuts
+  ntab C-S-rght
+  ptab C-S-lft
 
   ;; Amethyst things
   mod1 (around lalt lsft)
@@ -162,10 +166,10 @@
   _      _     del       _         _    _    
   )
 
-(deflayer tmux
-  _       _     _    _    _    _    _    _    _    @ty  _    _    _      
-  _       _     _    _    _    _    @tp  @to  _    @tn  @tz  _    _    
-  _       _     _    _    _    _    _    _    _    _    @tsh @tsv _
+(deflayer tmux ;; and alacirtty
+  _       _     _    _    _    _    _    @ptab @ntab @ty  _    _    _      
+  _       _     _    _    _    _    @tp  @to   _     @tn  @tz  _    _    
+  _       _     _    _    _    _    _    _     _     _    @tsh @tsv _
   _       _     @txy      _         @tc  _    
 )
 
