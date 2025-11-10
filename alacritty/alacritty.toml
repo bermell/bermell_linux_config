@@ -6,6 +6,9 @@ normal = { family = "Hack Nerd Font" }
 [window]
 decorations = "Full"
 
+[terminal]
+shell = { program = "/opt/homebrew/bin/zellij" }
+
 [keyboard]
 # Key bindings
 # F11 = Toggle fullscreen mode
@@ -15,4 +18,14 @@ bindings = [
   { key = "F11", action = "ToggleFullscreen" },
   { key = ",", mods = "Control", action = "IncreaseFontSize" },
   { key = "-", mods = "Control", action = "DecreaseFontSize" },
+
+  # cycle between tabs with ctrl + shift + left/right arrow
+  { key = "Left", mods = "Control|Shift", action = "SelectPreviousTab" },
+  { key = "Right", mods = "Control|Shift", action = "SelectNextTab" },
+
+  # new tab with ctrl + shift + T
+  { key = "T", mods = "Control|Shift", action = "CreateNewTab" },
+
+  # macos fullscreen
+  { key = "F", mods = "Super|Shift", action = "ToggleFullscreen" },
 ]
