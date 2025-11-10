@@ -12,6 +12,11 @@ if status is-interactive
     set fish_cursor_visual block
 end
 
+# Ensure Homebrew path is always set
+if test -d /opt/homebrew
+    eval (/opt/homebrew/bin/brew shellenv)
+end
+
 pyenv init - | source
 
 fish_user_key_bindings
