@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     tmux {
-        bind "y" { SwitchToMode "Scroll"; }
+        bind "y" { EditScrollback; SwitchToMode "Normal";}
         bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Esc" { SwitchToMode "Normal"; }
         bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
@@ -233,7 +233,7 @@ plugins {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-default_shell "fish"
+default_shell "/opt/homebrew/bin/fish"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -351,7 +351,7 @@ default_layout "layout_compact"
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-scrollback_editor "nvim"
+scrollback_editor "/opt/homebrew/bin/nvim"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

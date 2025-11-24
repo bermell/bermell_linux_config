@@ -45,7 +45,7 @@
   nO (tap-hold-next-release 300 o (layer-toggle numbers))
   sI (tap-hold-next-release 300 i (layer-toggle symbols))
   spcsym (tap-hold-next-release 300 spc (layer-toggle symbols))
-  s2G (tap-hold-next-release 300 g (layer-toggle tmux))
+  s2G (tap-hold-next-release 300 g (layer-toggle terminal))
   ccC (tap-hold 500 c (around lctl c))
   ccV (tap-hold 500 v (around lctl v))
   ccX (tap-hold 500 x (around lctl x))
@@ -58,7 +58,7 @@
   cT (tap-hold-next-release 300 t lctl)
   sS (tap-hold-next-release 300 s lsft)
   winR (tap-hold-next-release 300 r (layer-toggle window))
-  tmxG (tap-hold-next-release 300 g (layer-toggle tmux))
+  tmxG (tap-hold-next-release 300 g (layer-toggle terminal))
   cN (tap-hold-next-release 300 n lctl)
   sE (tap-hold-next-release 300 e lsft)
   aI (tap-hold-next-release 300 i lmet)
@@ -138,7 +138,7 @@
   eeh (tap-macro " a)
   oo (tap-macro " o)
   
-  ;; tmux
+  ;; terminal, zellij and alacirtty
   cspc (around lctl b)
   to (tap-macro @cspc o)
   tn (tap-macro @cspc n)
@@ -160,29 +160,29 @@
 
 
 (deflayer symbols
-  _      !     @    #    $    %    &    {    \(   \)   }    _     _  
-  caps   =     +    *    ^    |    ~    /    :    ?    `    _     _   
+  _      !     @    #    $    %         &    {    \(   \)   }    _     _  
+  caps   =     +    *    ^    |         ~    /    :    ?    `    _     _   
   _      _     <    <    >    >    _    ;    \_   [    ]    \\   _ 
   _      _     del       _         _    _    
   )
 
-(deflayer tmux ;; and alacirtty
-  _       _     _    _    _    _    _    @ptab @ntab @ty  _    _    _      
-  _       _     _    _    _    _    @tp  @to   _     @tn  @tz  _    _    
-  _       _     _    _    _    _    _    _     _     _    @tsh @tsv _
+(deflayer terminal ;; zellij and alacirtty
+  _       _     _    _    _    _         _    @ntab _   @ty  _    _    _      
+  _       _     _    _    _    _         @tp  @to   _   @tn  @tz  _    _    
+  _       _     _    _    _    _    _    _    @ptab _    @tsh @tsv _
   _       _     @txy      _         @tc  _    
 )
 
 (deflayer numbers
-  _      _     _    _    _    _    _    7    8    9    _    _     _       
-  _      lmet  lalt lsft lctl _    _    4    5    6    0    _     _      
-  _      _     _     _    _    _    _    _    1    2    3    _    _     
+  _      _     _    _    _    _         _    7    8    9    _    _     _       
+  _      lmet  lalt lsft lctl _         _    4    5    6    0    _     _      
+  _      _     _    _    _    _    _    _    1    2    3    _    _     
   _      _     _         0         _    _    
   )
 
 (deflayer navigation
-  _    _   _    @fw   _     _    _     pgup  _     _     up   _  _
-  _    _   lalt lsft  lctl  _    left  down  up    rght  ret  _  _  
+  _    _   _    @fw   _     _          _     pgup  _     _     up   _  _
+  _    _   lalt lsft  lctl  _          left  down  up    rght  ret  _  _  
   _    _   _     _    _     _    @bw   down  pgdn  _     _    _  _ 
   _    _   _         spc       _    _    
   )
