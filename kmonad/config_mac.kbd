@@ -140,9 +140,9 @@
   
   ;; terminal, zellij and alacirtty
   cspc (around lctl b)
-  to (tap-macro @cspc o)
-  tn (tap-macro @cspc n)
-  tp (tap-macro @cspc p)
+  to (around lctl 1)
+  tn (around lctl 2)
+  tp (around lctl 3)
   tc (tap-macro @cspc c)
   tz (tap-macro @cspc z)
   tsv (tap-macro @cspc -)

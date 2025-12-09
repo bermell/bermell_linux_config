@@ -45,6 +45,9 @@ keybinds clear-defaults=true {
         
         // Open the session selction plugin using Ctrl Alt b
         //
+        bind "Ctrl 1" { FocusNextPane; SwitchToMode "Normal";}
+        bind "Ctrl 2" { GoToNextTab; SwitchToMode "Normal";}
+        bind "Ctrl 3" { GoToPreviousTab; SwitchToMode "Normal";}
     }
     //locked {
         //bind "Ctrl g" { SwitchToMode "Normal"; }
