@@ -25,7 +25,8 @@ function fish_prompt --description 'Write out the prompt'
         set status_color (set_color $fish_color_error)
         set prompt_status $status_color "[" $last_status "]" $normal
     end
-    set -l prompt (echo -s -n $python_color '(' (get_pyenv_virtual) ') ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal $prompt_status ' ' )
+    # set -l prompt (echo -s -n $python_color '(' (get_pyenv_virtual) ') ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal $prompt_status ' ' )
+    set -l prompt (echo -s -n $python_color '(-not-set-) ' $cwd_color (prompt_pwd) $vcs_color (fish_vcs_prompt) $normal $prompt_status ' ' )
     set -l final_prompt (echo -s -n $status_color $suffix ' ' $normal)
 
     echo -e -n $prompt
