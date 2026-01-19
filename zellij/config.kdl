@@ -48,6 +48,12 @@ keybinds clear-defaults=true {
         bind "Ctrl 1" { FocusNextPane; SwitchToMode "Normal";}
         bind "Ctrl 2" { GoToNextTab; SwitchToMode "Normal";}
         bind "Ctrl 3" { GoToPreviousTab; SwitchToMode "Normal";}
+        bind "Ctrl 4" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "Ctrl 5" { EditScrollback; SwitchToMode "Normal";}
+        bind "Ctrl 6" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "Ctrl 7" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "Ctrl 8" { NewTab; SwitchToMode "Normal"; }
+        bind "Ctrl 9" { CloseFocus; SwitchToMode "Normal"; }
     }
     //locked {
         //bind "Ctrl g" { SwitchToMode "Normal"; }
