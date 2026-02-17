@@ -17,7 +17,16 @@ if test -d /opt/homebrew
     eval (/opt/homebrew/bin/brew shellenv)
 end
 
-pyenv init - | source
+# Cached pyenv init for faster shell startup (regenerate after pyenv install/uninstall)
+set -q PYENV_ROOT; or set -gx PYENV_ROOT $HOME/.pyenv
+if test -d $PYENV_ROOT
+    set -l pyenv_fish_init $PYENV_ROOT/fish_init.fish
+    if not test -f $pyenv_fish_init
+        set -gx PATH $PYENV_ROOT/bin $PATH
+        pyenv init - --no-rehash fish > $pyenv_fish_init
+    end
+    source $pyenv_fish_init
+end
 
 fish_user_key_bindings
 
