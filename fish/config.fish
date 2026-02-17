@@ -12,9 +12,12 @@ if status is-interactive
     set fish_cursor_visual block
 end
 
-# Ensure Homebrew path is always set
+# Static Homebrew path (avoids ~200ms brew shellenv subprocess; use brew shellenv if paths change)
 if test -d /opt/homebrew
-    eval (/opt/homebrew/bin/brew shellenv)
+    fish_add_path --global --path /opt/homebrew/bin /opt/homebrew/sbin
+    set -gx HOMEBREW_PREFIX /opt/homebrew
+    set -gx HOMEBREW_CELLAR /opt/homebrew/Cellar
+    set -gx HOMEBREW_REPOSITORY /opt/homebrew
 end
 
 # Cached pyenv init for faster shell startup (regenerate after pyenv install/uninstall)
