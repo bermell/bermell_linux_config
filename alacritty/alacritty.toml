@@ -28,4 +28,5 @@ bindings = [
 
   # macos fullscreen
   { key = "F", mods = "Super|Shift", action = "ToggleFullscreen" },
+  { key = "Return", mods = "Shift", chars = "\u001B\r" },
 ]
