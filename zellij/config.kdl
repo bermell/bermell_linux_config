@@ -231,7 +231,7 @@ plugins {
 //   - quit
 //
 // on_force_close "quit"
-
+web_server true
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
 //    - true
