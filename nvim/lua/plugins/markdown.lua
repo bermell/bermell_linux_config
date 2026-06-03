@@ -1,29 +1,20 @@
-local md_config = vim.fn.expand("~/.markdownlint.jsonc")
+local md_config = vim.fn.expand("~/.markdownlint-cli2.jsonc")
 
 return {
   {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        markdown = { "prettier", "markdownlint-cli2" },
-      },
-      formatters = {
-        ["markdownlint-cli2"] = {
-          command = "markdownlint-cli2",
-          args = { "--fix", "--config", md_config, "$FILENAME" },
-          stdin = false,
-        },
+        markdown = { "prettier" },
       },
     },
   },
   {
     "mfussenegger/nvim-lint",
-    opts = {
-      linters = {
-        ["markdownlint-cli2"] = {
-          args = { "--config", md_config, "--" },
-        },
-      },
-    },
+    opts = function(_, opts)
+      local cli2 = require("lint").linters["markdownlint-cli2"]
+      cli2.args = { "--config", md_config, "-" }
+      return opts
+    end,
   },
 }
