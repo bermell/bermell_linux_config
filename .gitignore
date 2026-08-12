@@ -57,3 +57,5 @@ microsoft-edge
 rclone
 github-copilot/apps.json
 /github-copilot
+/btop/btop.conf
+/cagent
