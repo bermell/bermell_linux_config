@@ -73,7 +73,6 @@
   mod2 (around @mod1 lctl)
 
   laycycle (around @mod1 spc)  ;; cycle layout
-  laycycle2 (around @mod2 spc)
 
   mpshr (around @mod1 l) ;; shrink expand main pane
   mppmp (around @mod1 h)
