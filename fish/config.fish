@@ -10,6 +10,13 @@ if status is-interactive
     # The following variable can be used to configure cursor shape in
     # visual mode, but due to fish_cursor_default, is redundant here
     set fish_cursor_visual block
+
+    # set environment variables for jenkins validation
+    set -x JENKINS_USER_ID Mattias
+    set -x JENKINS_PASSWORD lessfuckedchar
+    set -x JENKINS_URL https://butler.modl.ai
+    set -x JENKINS_INSECURE true
+
 end
 
 # Static Homebrew path (avoids ~200ms brew shellenv subprocess; use brew shellenv if paths change)
