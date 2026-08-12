@@ -1,0 +1,14 @@
+// Bisection layout: same shape as layout_compact but with the built-in
+// compact-bar instead of the third-party zjstatus.wasm plugin.
+//
+// Use this to test whether zjstatus is behind the zellij server crashes
+// (heap corruption in the `screen` thread). Switch with:
+//     default_layout "layout_nozjstatus"    in ~/.config/zellij/config.kdl
+// then run a few days. No crash reports in ~/Library/Logs/DiagnosticReports/
+// => zjstatus is the culprit.
+layout {
+    pane
+    pane size=1 borderless=true {
+        plugin location="compact-bar"
+    }
+}

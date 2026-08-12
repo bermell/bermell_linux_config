@@ -2,6 +2,8 @@ keybinds clear-defaults=true {
     tmux {
         bind "y" { EditScrollback; SwitchToMode "Normal";}
         bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Ctrl n" { MovePane "Left"; SwitchToMode "Normal"; }
+        bind "Ctrl o" { MovePane "Right"; SwitchToMode "Normal"; }
         bind "Esc" { SwitchToMode "Normal"; }
         bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
@@ -224,6 +226,19 @@ plugins {
     session-manager { path "session-manager"; }
 }
 
+// zjframes: background plugin (companion to zjstatus) that toggles pane frames
+// on demand. Requires zellij >= 0.41.0. Frames are off by default (see
+// pane_frames false below) and switch on only for the conditions enabled here.
+// Docs: https://github.com/dj95/zjstatus/wiki/6---zjframes
+load_plugins {
+    "file:/Users/mattias/.config/zellij/bin/zjframes.wasm" {
+        hide_frame_for_single_pane       "false"
+        hide_frame_except_for_search     "false"
+        hide_frame_except_for_fullscreen "false"
+        hide_frame_except_for_scroll     "false"
+    }
+}
+
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
 // Options:
@@ -253,7 +268,9 @@ default_shell "/opt/homebrew/bin/fish"
 //   - true (default)
 //   - false
 //
-// pane_frames true
+// Must be false so zjframes (see load_plugins above) owns frame visibility;
+// leaving it true makes the two fight over the frames.
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:

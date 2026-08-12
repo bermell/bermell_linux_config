@@ -12,7 +12,8 @@ layout {
             border_format   "#[fg=#6C7086]{char}"
             border_position "top"
 
-            hide_frame_for_single_pane "false"
+            // Frame control now lives in zjframes (config.kdl load_plugins),
+            // so zjstatus's own hide_frame_* options are deliberately absent.
 
             mode_normal  "#[bg=blue] "
             mode_tmux    "#[bg=#ffc387] "
@@ -29,7 +30,10 @@ layout {
             //command_git_branch_interval    "10"
             //command_git_branch_rendermode  "static"
 
-            command_battery_command "bash -c \"upower -i $(upower -e | grep 'battery') | grep 'percentage' | awk '{print $2}'\""
+            // upower is Linux-only, so this widget rendered nothing on macOS.
+            // pmset is the macOS equivalent; absolute path so it resolves
+            // regardless of the server's PATH.
+            command_battery_command "/bin/bash -c \"pmset -g batt | grep -Eo '[0-9]+%'\""
             //command_battery_command "echo \"heoow\""
             command_battery_format      "#[fg=blue] {stdout} "
             command_battery_interval    "10"
