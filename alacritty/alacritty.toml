@@ -7,7 +7,10 @@ normal = { family = "Hack Nerd Font" }
 decorations = "Full"
 
 [terminal]
-shell = { program = "/opt/homebrew/bin/zellij" }
+# Wrapper instead of zellij directly: keeps the window open if zellij dies,
+# so server crashes are visible rather than silently closing the window.
+# Add "--debug" to args below for verbose zellij logging.
+shell = { program = "/Users/mattias/.config/alacritty/zellij-launch.sh", args = [] }
 
 [keyboard]
 # Key bindings
