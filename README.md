@@ -2,11 +2,8 @@
 
 ## Simple installs
 
-Install some reasonable tools and all dependencies for the more advanced package
-installers
-
-First, use snap (ubuntu software) to install gnome-tweaks, open and bind
-capslock to be ctrl
+Install some reasonable tools and all dependencies for the more advanced package installers First, use snap (ubuntu
+software) to install gnome-tweaks, open and bind capslock to be ctrl
 
 ```shell
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
@@ -49,8 +46,8 @@ Then you need to do restart computer, then run `vf install`
 
 ### fzf
 
-Go to [fzf releases](https://github.com/junegunn/fzf/releases), download the
-appropriate binary. Put it in `~/.local/bin/fzf`.
+Go to [fzf releases](https://github.com/junegunn/fzf/releases), download the appropriate binary. Put it in
+`~/.local/bin/fzf`.
 
 ### pyenv and python
 
@@ -100,9 +97,8 @@ fish_add_path ~/.cargo/bin/
 
 ### Docker
 
-[https://docs.docker.com/desktop/install/ubuntu/](https://docs.docker.com/desktop/install/ubuntu/)
-install the docker desktop first, on Linux that is very different from the
-docker engine that runs on the host natively...
+[https://docs.docker.com/desktop/install/ubuntu/](https://docs.docker.com/desktop/install/ubuntu/) install the docker
+desktop first, on Linux that is very different from the docker engine that runs on the host natively...
 
 [https://github.com/jesseduffield/lazydocker#binary-release-linuxosxwindows](https://github.com/jesseduffield/lazydocker#binary-release-linuxosxwindow)
 like `lazygit` for docker. Awesome!
@@ -119,10 +115,8 @@ ln -s $HOME/.config/prettierrc $HOME/.prettierrc
 
 ### Kmonad - keyboard layout
 
-Download the binary from
-[kmonad github](https://github.com/kmonad/kmonad/releases). Make it executable
-and put it in `/home/mattias/.local/bin/kmonad` We want to run kmonad as a user
-with the minimal privilages needed
+Download the binary from [kmonad github](https://github.com/kmonad/kmonad/releases). Make it executable and put it in
+`/home/mattias/.local/bin/kmonad` We want to run kmonad as a user with the minimal privilages needed
 [see more](https://dev.to/ram535/kmonad-and-the-power-of-infinite-leader-keys-888).
 
 ```shell
