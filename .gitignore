@@ -56,3 +56,4 @@ microsoft-edge
 .DS_Store
 rclone
 github-copilot/apps.json
+/github-copilot
