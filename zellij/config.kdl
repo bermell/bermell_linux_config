@@ -226,18 +226,19 @@ plugins {
     session-manager { path "session-manager"; }
 }
 
-// zjframes: background plugin (companion to zjstatus) that toggles pane frames
-// on demand. Requires zellij >= 0.41.0. Frames are off by default (see
-// pane_frames false below) and switch on only for the conditions enabled here.
+// zjframes (companion to zjstatus) is deliberately NOT loaded: it can only
+// *hide* frames on demand, and we want frames permanently visible on all four
+// sides of every pane so the focused pane is always obvious. Frame visibility
+// is owned by `pane_frames true` below instead.
 // Docs: https://github.com/dj95/zjstatus/wiki/6---zjframes
-load_plugins {
-    "file:/Users/mattias/.config/zellij/bin/zjframes.wasm" {
-        hide_frame_for_single_pane       "false"
-        hide_frame_except_for_search     "false"
-        hide_frame_except_for_fullscreen "false"
-        hide_frame_except_for_scroll     "false"
-    }
-}
+// load_plugins {
+//     "file:/Users/mattias/.config/zellij/bin/zjframes.wasm" {
+//         hide_frame_for_single_pane       "false"
+//         hide_frame_except_for_search     "false"
+//         hide_frame_except_for_fullscreen "false"
+//         hide_frame_except_for_scroll     "false"
+//     }
+// }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
@@ -246,7 +247,7 @@ load_plugins {
 //   - quit
 //
 // on_force_close "quit"
-web_server true
+web_server false
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
 //    - true
@@ -268,9 +269,10 @@ default_shell "/opt/homebrew/bin/fish"
 //   - true (default)
 //   - false
 //
-// Must be false so zjframes (see load_plugins above) owns frame visibility;
-// leaving it true makes the two fight over the frames.
-pane_frames false
+// Always on: full four-sided frame around every pane, with the focused pane's
+// frame highlighted. Only set this false if zjframes (see load_plugins above)
+// is re-enabled to own frame visibility — otherwise the two fight over frames.
+pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:

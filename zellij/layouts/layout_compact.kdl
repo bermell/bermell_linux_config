@@ -3,7 +3,7 @@ layout {
     pane size=1 borderless=true {
         plugin location="file:/Users/mattias/.config/zellij/bin/zjstatus.wasm" {
             format_left   "{mode} #[fg=#89B4FA,bold]{session}"
-            format_center "{tabs}"
+            format_center "{session} - {tabs}"
             format_right  "{command_battery} {datetime}"
             format_space  ""
 
@@ -12,8 +12,9 @@ layout {
             border_format   "#[fg=#6C7086]{char}"
             border_position "top"
 
-            // Frame control now lives in zjframes (config.kdl load_plugins),
-            // so zjstatus's own hide_frame_* options are deliberately absent.
+            // Frame control lives in `pane_frames true` (config.kdl); neither
+            // zjstatus's hide_frame_* options nor zjframes are used, so frames
+            // stay visible on all four sides at all times.
 
             mode_normal  "#[bg=blue] "
             mode_tmux    "#[bg=#ffc387] "
