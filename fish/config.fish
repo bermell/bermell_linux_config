@@ -43,6 +43,18 @@ if test -d $PYENV_ROOT
     source $pyenv_fish_init
 end
 
+# macOS caps AF_UNIX socket paths at 103 bytes. The default $TMPDIR here eats 79
+# of them, leaving only 24 for a zellij session name — longer names fail with
+# "the IPC socket path is too long". Keep this in sync with the value in
+# alacritty/zellij-launch.sh, or the two disagree about which sessions exist.
+if test -d /tmp
+    set -l zj_sock /tmp/zellij-(id -u)
+    if not test -L $zj_sock; and begin; not test -e $zj_sock; or test -d $zj_sock -a -O $zj_sock; end
+        mkdir -m 700 -p $zj_sock 2>/dev/null
+        set -gx ZELLIJ_SOCKET_DIR $zj_sock
+    end
+end
+
 fish_user_key_bindings
 
 set -x JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
