@@ -27,6 +27,11 @@ if test -d /opt/homebrew
     set -gx HOMEBREW_REPOSITORY /opt/homebrew
 end
 
+# macOS tools default to ~/Library/Application Support; point XDG-aware ones here
+set -gx XDG_CONFIG_HOME $HOME/.config
+# Poetry ignores XDG_CONFIG_HOME on macOS
+set -gx POETRY_CONFIG_DIR $XDG_CONFIG_HOME/pypoetry
+
 # Cached pyenv init for faster shell startup. Auto-regenerates when the pyenv
 # binary is newer than the cache (e.g. after `brew upgrade pyenv`).
 set -q PYENV_ROOT; or set -gx PYENV_ROOT $HOME/.pyenv
