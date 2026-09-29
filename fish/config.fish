@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/mattias/.docker/bin"
+# End of Docker Desktop section.
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     # Emulates vim's cursor shape behavior
@@ -10,12 +14,6 @@ if status is-interactive
     # The following variable can be used to configure cursor shape in
     # visual mode, but due to fish_cursor_default, is redundant here
     set fish_cursor_visual block
-
-    # set environment variables for jenkins validation
-    set -x JENKINS_USER_ID Mattias
-    set -x JENKINS_PASSWORD lessfuckedchar
-    set -x JENKINS_URL https://butler.modl.ai
-    set -x JENKINS_INSECURE true
 
 end
 
@@ -43,7 +41,7 @@ if test -d $PYENV_ROOT
         # pyenv hardcodes a versioned Cellar path for its completions, which
         # breaks on upgrade; rewrite it to the stable brew opt symlink.
         pyenv init - --no-rehash fish \
-            | string replace -r "/Cellar/pyenv/[^/']+/" '/opt/pyenv/' >$pyenv_fish_init
+            | string replace -r "/Cellar/pyenv/[^/']+/" /opt/pyenv/ >$pyenv_fish_init
     end
     source $pyenv_fish_init
 end
@@ -54,7 +52,9 @@ end
 # alacritty/zellij-launch.sh, or the two disagree about which sessions exist.
 if test -d /tmp
     set -l zj_sock /tmp/zellij-(id -u)
-    if not test -L $zj_sock; and begin; not test -e $zj_sock; or test -d $zj_sock -a -O $zj_sock; end
+    if not test -L $zj_sock; and begin
+            not test -e $zj_sock; or test -d $zj_sock -a -O $zj_sock
+        end
         mkdir -m 700 -p $zj_sock 2>/dev/null
         set -gx ZELLIJ_SOCKET_DIR $zj_sock
     end
